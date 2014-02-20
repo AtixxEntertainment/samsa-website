@@ -1,0 +1,12 @@
+nav.navbar.navbar-default
+  .navbar-header
+  = link_to "Admin console", admin_path, class: "navbar-brand"
+  .collapse.navbar-collapse
+    ul.nav.navbar-nav.navbar-right
+      li.dropdown
+        = link_to "#", class: "dropdown-toggle", data: { toggle: "dropdown" } do
+          = user.avatar size: :tiny, margin: nil
+          = content_tag :span, user.nombres, class: "little-horizontal-margin"
+          b.caret
+        ul.dropdown-menu
+          li = link_to "Log out", logout_path

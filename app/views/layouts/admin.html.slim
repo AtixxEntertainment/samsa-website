@@ -7,9 +7,10 @@ html
     meta name="author" content="Mario Andrés Correa"
     meta name="viewport" content="width=device-width"
     link rel="author" href="/humans.txt"
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "admin", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   body
-    #main
+    #admin-main
+      = render "layouts/admin_navbar"
       = yield
