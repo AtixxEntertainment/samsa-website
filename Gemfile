@@ -44,6 +44,8 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem "dotenv-rails"
+
 gem "slim"
 gem "kaminari"
 gem "exception_notification"
