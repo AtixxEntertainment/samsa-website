@@ -51,6 +51,13 @@ gem "kaminari"
 gem "exception_notification"
 gem "rspec-rails"
 gem "rb-fsevent"
+
+gem "omniauth-facebook"
+gem "omniauth-twitter"
+
+# annotate models
+gem "annotate", :git => "git://github.com/ctran/annotate_models.git"
+
 group :test, :development do
   gem "factory_girl_rails"
   gem "capybara"
