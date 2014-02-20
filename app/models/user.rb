@@ -12,6 +12,7 @@
 #
 
 class User < ActiveRecord::Base
+  include Cacheable
   include Authenticable
 
 # relationships
