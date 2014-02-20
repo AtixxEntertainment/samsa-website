@@ -58,6 +58,11 @@ gem "omniauth-twitter"
 # annotate models
 gem "annotate", :git => "git://github.com/ctran/annotate_models.git"
 
+# decorators
+gem "draper"
+gem "decent_exposure", "~>2.3.0"
+gem "decent_decoration"
+
 group :test, :development do
   gem "factory_girl_rails"
   gem "capybara"
