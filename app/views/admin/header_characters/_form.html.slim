@@ -1,0 +1,27 @@
+h2 = header_character.new_record? ? "Nuevo" : "Editar"
+= simple_form_for [:admin, header_character] do |f|
+  = f.input :nombre, input_html: { class: "form-control" }
+  .help-block
+    | Las imágenes se
+    ul
+      li
+        code
+          | /images/header_[nombre].png
+      li
+        code
+          | /images/header_[nombre]@2x.png
+  = f.input :profundidad, input_html: { class: "form-control" }
+  = f.input :posicion_horizontal, label: "Margen Horizontal", as: :range, input_html: { max: 100 }
+  .pull-left Izquierda
+  .pull-right Derecha
+  .clearfix
+  = f.input :posicion_vertical, label: "Margen Vertical", as: :range, input_html: { min: -150, max: 150}
+  #posicion_vertical_value.align_center
+  .header-preview
+    = render "other_characters"
+    = header_character.decorate.avatar classes: "current-character"
+  .post-header-preview
+  .actions
+    = f.submit "Enviar", class: "btn btn-default", data: { disable_with: "Enviando" }
+
+= javascript_tag "new window.headerCharactersPositionHelper();"

@@ -7,6 +7,8 @@ SamsaWebsite::Application.routes.draw do
   get :admin, to: "admin#index", constraints: AdminConstraint.new
 
   namespace :admin do
+    resources :preferences
+    resources :header_characters
   end
 
   root "home#index"
