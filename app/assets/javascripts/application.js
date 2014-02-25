@@ -15,4 +15,5 @@
 //= require bootstrap
 //= require turbolinks
 //= require retina
+//= require parallax
 //= require_tree .
