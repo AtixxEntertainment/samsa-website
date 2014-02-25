@@ -9,6 +9,11 @@ SamsaWebsite::Application.routes.draw do
   namespace :admin do
     resources :preferences
     resources :header_characters
+    resources :users do
+      member do
+        get :admin
+      end
+    end
   end
 
   root "home#index"

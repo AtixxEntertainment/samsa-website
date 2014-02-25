@@ -1,0 +1,16 @@
+.row id="user-#{user.id}"
+  .col-xs-4
+    .pull-left
+      = user.avatar
+    .nombres
+      = user.nombres
+    .email
+      = user.email
+  .col-xs-4
+    = user.social_profile
+    .admin_badge
+      = user.admin_badge
+  .col-xs-4
+    = user.toggle_admin_button
+  .clearfix
+  .samsa_divider

@@ -3,7 +3,7 @@ class AdminController < ApplicationController
 
   layout "admin"
 
-  expose_decorated(:user, decorator: UserDecorator) { current_user }
+  expose_decorated(:decorated_current_user, decorator: UserDecorator) { current_user }
 
   def index
   end
