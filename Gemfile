@@ -58,6 +58,12 @@ gem "omniauth-twitter"
 # annotate models
 gem "annotate", :git => "git://github.com/ctran/annotate_models.git"
 
+# uploads
+gem "carrierwave"
+
+# simple forms
+gem "simple_form"
+
 # decorators
 gem "draper"
 gem "decent_exposure", "~>2.3.0"
