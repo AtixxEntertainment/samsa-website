@@ -3,5 +3,6 @@
   *= require bootstrap
   *= require profile-images
   *= require presets
+  *= require header_characters
   *= require_tree .
 */

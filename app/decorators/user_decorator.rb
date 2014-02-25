@@ -1,5 +1,5 @@
 class UserDecorator < ApplicationDecorator
-  def avatar(size: nil, margin: "little-horizontal-margin")
-    h.image_tag imagen, class: "profile-image #{size} #{margin}"
+  def avatar(size: nil, margin: "little-horizontal-margin", classes: "profile-image")
+    h.image_tag imagen, class: "#{classes} #{size} #{margin} no_retina"
   end
 end
