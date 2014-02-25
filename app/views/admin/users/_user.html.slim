@@ -10,7 +10,11 @@
     = user.social_profile
     .admin_badge
       = user.admin_badge
-  .col-xs-4
-    = user.toggle_admin_button
+    .ban_badge
+      = user.ban_badge
+  .col-xs-4.align_center
+      = user.toggle_admin_button
+      span.little-horizontal-margin
+      = user.toggle_ban_button
   .clearfix
   .samsa_divider

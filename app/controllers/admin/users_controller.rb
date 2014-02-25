@@ -8,5 +8,9 @@ module Admin
     def admin
       user.toggle! :admin
     end
+
+    def ban
+      user.toggle! :banned
+    end
   end
 end

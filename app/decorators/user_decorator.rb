@@ -11,6 +11,10 @@ class UserDecorator < ApplicationDecorator
     h.content_tag(:span, "Administrador", class: "label label-primary") if object.admin?
   end
 
+  def ban_badge
+    h.content_tag(:span, "Banned", class: "label label-danger") if object.banned?
+  end
+
   def toggle_admin_button_text
     if object.admin?
       "Quitar administración"
@@ -20,7 +24,19 @@ class UserDecorator < ApplicationDecorator
   end
 
   def toggle_admin_button
-    h.link_to toggle_admin_button_text, h.admin_admin_user_path(object), remote: true, class: "btn btn-default"
+    h.link_to toggle_admin_button_text, h.admin_admin_user_path(object), remote: true, class: "btn btn-default btn-sm"
+  end
+
+  def toggle_ban_button_text
+    if object.banned?
+      "Quitar ban"
+    else
+      "Ban"
+    end
+  end
+
+  def toggle_ban_button
+    h.link_to toggle_ban_button_text, h.ban_admin_user_path(object), remote: true, class: "btn btn-default btn-sm"
   end
 
   def social_profile
@@ -29,6 +45,6 @@ class UserDecorator < ApplicationDecorator
     else
       link_path = "http://facebook.com/" + object.profile.nickname
     end
-    h.link_to object.profile.provider.capitalize, link_path, class: "label label-success"
+    h.link_to object.profile.provider.capitalize, link_path, class: "label label-success", target: "_blank"
   end
 end

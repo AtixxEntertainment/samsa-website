@@ -12,6 +12,7 @@ SamsaWebsite::Application.routes.draw do
     resources :users do
       member do
         get :admin
+        get :ban
       end
     end
   end
