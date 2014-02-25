@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include Sessions
+  include Flashes
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -14,6 +15,11 @@ class ApplicationController < ActionController::Base
 
   def routing_error
     render_not_found(nil)
+  end
+
+  # decent exposure strong parameters
+  decent_configuration do
+    strategy DecentExposure::StrongParametersStrategy
   end
 
   protected
