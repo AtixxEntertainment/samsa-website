@@ -1,3 +1,4 @@
-= link_to admin_header_character_path(header_character), class: "header_character_on_list" do
+= link_to admin_header_character_path(header_character), class: "col-xs-4 header_character_on_list" do
   = header_character.avatar
-  = header_character.nombre
+  .clearfix
+  h4 = header_character.nombre
