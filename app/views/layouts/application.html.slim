@@ -11,7 +11,12 @@ html
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   body
-    #header.parallax-scene
-      = render "layouts/header"
-    #main
-      = yield
+    .copyright &copy; Samsa y los Caballeros de la Luz 2014. Todos los derechos reservados
+    #header-wrapper
+      .header-border.top
+      #header.parallax-scene
+        = render "layouts/header"
+      .header-border.bottom
+    #main-wrapper
+      #main
+        = yield
