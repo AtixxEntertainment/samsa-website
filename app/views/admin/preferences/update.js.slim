@@ -1,0 +1,10 @@
+| (function(){
+    var $node = $("<span />", {class: "text-success little-horizontal-margin", text: "Actualizado"}).hide();
+    setTimeout(function(){
+      $node.fadeOut(function(){
+        $node.remove();
+      });
+    }, 3000);
+    $("#preference_value").after($node);
+    $node.fadeIn();
+  })();

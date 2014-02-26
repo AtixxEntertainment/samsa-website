@@ -1,3 +1,4 @@
+# encoding: utf-8
 module Admin
   class PreferencesController < AdminController
     expose_decorated :header_characters
@@ -7,8 +8,7 @@ module Admin
     }
 
     def update
-      Preference.preference(params[:preference][:name]).update preference_attributes
-      render js: ";"
+      render js: "alert('Algo salió mal');" unless Preference.preference(params[:preference][:name]).update(preference_attributes)
     end
 
     private
