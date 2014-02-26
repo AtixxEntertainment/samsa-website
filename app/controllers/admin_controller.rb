@@ -16,4 +16,9 @@ class AdminController < ApplicationController
       false
     end
   end
+
+  private
+
+  def set_active
+  end
 end
