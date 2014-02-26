@@ -9,6 +9,7 @@
 #  admin      :boolean          default(FALSE)
 #  created_at :datetime
 #  updated_at :datetime
+#  banned     :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
@@ -17,4 +18,5 @@ class User < ActiveRecord::Base
 
 # relationships
   has_one :profile
+  has_many :posts, dependent: :destroy
 end

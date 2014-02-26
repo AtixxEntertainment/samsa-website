@@ -1,0 +1,9 @@
+h1 Entradas
+
+.pull-right
+  = link_to "", new_admin_post_path, class: "btn btn-default glyphicon glyphicon-plus"
+
+- if posts.any?
+  = render posts
+- else
+  h3 No hay entradas
