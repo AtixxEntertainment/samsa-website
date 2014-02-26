@@ -1,0 +1,10 @@
+.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button type="button" class="close" data-dismiss="modal" &times;
+        = yield :title
+      .modal-body
+        = yield
+      .modal-footer
+        = yield :footer

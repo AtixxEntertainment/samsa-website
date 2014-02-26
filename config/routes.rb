@@ -9,7 +9,11 @@ SamsaWebsite::Application.routes.draw do
   namespace :admin do
     resources :preferences
     resources :header_characters
-    resources :posts
+    resources :posts do
+      collection do
+        post :preview
+      end
+    end
     resources :users do
       member do
         get :admin

@@ -1,5 +1,5 @@
 module Admin
-  class HeaderCharactersController < AdminController
+  class HeaderCharactersController < PreferencesController
     expose :header_character, attributes: :header_character_params
 
     def show

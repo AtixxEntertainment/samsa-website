@@ -8,6 +8,10 @@ module Admin
       self.post = post.decorate
     end
 
+    def preview
+      render layout: "modal"
+    end
+
     def create
       post.user = current_user
       if post.save

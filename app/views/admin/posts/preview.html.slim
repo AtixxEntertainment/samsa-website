@@ -1,0 +1,5 @@
+- content_for :title do
+  h4 Vista previa
+- content_for :footer do
+  button type="button" class="btn btn-default" data-dismiss="modal" Cerrar
+= GitHub::Markdown.render(params[:body]).html_safe

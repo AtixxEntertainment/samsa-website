@@ -28,4 +28,4 @@ h1 = "#{header_character.new_record? ? "Nuevo" : "Editar"} personaje"
   .actions
     = f.submit "Enviar", class: "btn btn-default", data: { disable_with: "Enviando" }
 
-= javascript_tag "new window.headerCharactersPositionHelper();"
+= javascript_tag "new Atixx.HeaderCharactersPositionHelper();"

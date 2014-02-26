@@ -2,7 +2,13 @@ h1 = "#{post.new_record? ? "Nueva" : "Editar"} entrada"
 
 = simple_form_for [:admin, post] do |f|
   .form-group = f.input :title, label: "Título", input_html: { class: "form-control" }
-  .form-group = f.input :body, label: "Contenido", input_html: { class: "form-control" }
+  .form-group
+    = f.input :body, label: "Contenido", input_html: { class: "form-control", rows: 10 }
+    span.light
+      a href="https://help.github.com/articles/github-flavored-markdown" target="_blank" Github flavored markdown
+      |  y HTML
+    .pull-right
+      = link_to "Vista previa", "#", id: "post-preview-button", class: "btn btn-default btn-sm margin-vertical-small"
   .form-group = f.input :published, label: "Publicada"
   .actions
     - unless post.new_record?

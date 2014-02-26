@@ -1,4 +1,4 @@
-class @headerCharactersPositionHelper
+class Atixx.HeaderCharactersPositionHelper
   constructor: ->
     @$character = $(".header-preview .current-character")
     @$posicionVertical = $("#posicion_vertical_value")
