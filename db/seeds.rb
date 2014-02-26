@@ -21,3 +21,8 @@ Rails.logger.debug "Creating default header characters.."
   {nombre: "samsa", profundidad: 1, posicion_horizontal: 58, posicion_vertical: 0}].each do |character|
   HeaderCharacter.create character
 end
+
+Rails.logger.debug "Creating default preferences.."
+[{name: "landing_page", value: 1}].each do |preference|
+  Preference.create preference
+end

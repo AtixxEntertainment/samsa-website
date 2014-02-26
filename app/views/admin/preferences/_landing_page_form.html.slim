@@ -1,0 +1,3 @@
+= form_for [:admin, landing_page], remote: true do |f|
+  = f.hidden_field :name
+  = f.select :value, possible_posts

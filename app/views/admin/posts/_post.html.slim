@@ -1,4 +1,4 @@
-= link_to admin_post_path(post), class: "model_on_list" do
-  h3 = post.title
+.model_on_list
+  h3 = link_to post.title, admin_post_path(post)
   = post.body
   = post.status
