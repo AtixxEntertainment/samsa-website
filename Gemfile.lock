@@ -95,6 +95,7 @@ GEM
       multipart-post (~> 1.2.0)
     ffi (1.9.3)
     formatador (0.2.4)
+    github-markdown (0.6.4)
     guard (2.4.0)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -284,6 +285,7 @@ DEPENDENCIES
   draper
   exception_notification
   factory_girl_rails
+  github-markdown
   guard-rspec
   jbuilder (~> 1.2)
   jquery-rails

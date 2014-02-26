@@ -71,6 +71,9 @@ gem "draper"
 gem "decent_exposure", "~>2.3.0"
 gem "decent_decoration"
 
+# github markdown
+gem "github-markdown"
+
 group :test, :development do
   gem "factory_girl_rails"
   gem "capybara"
