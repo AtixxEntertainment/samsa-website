@@ -37,5 +37,9 @@ module Admin
     def post_params
       params.require(:post).permit :title, :body, :published
     end
+
+    def set_active
+      @active_item = :entradas
+    end
   end
 end

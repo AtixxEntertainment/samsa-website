@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  before_filter :confirm_logged_in_is_admin
+  before_filter :confirm_logged_in_is_admin, :set_active
 
   layout "admin"
 

@@ -12,5 +12,11 @@ module Admin
     def ban
       user.toggle! :banned
     end
+
+    private
+
+    def set_active
+      @active_item = :usuarios
+    end
   end
 end

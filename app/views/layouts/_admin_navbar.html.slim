@@ -3,9 +3,9 @@ nav.navbar.navbar-default
   = link_to "Administración", admin_path, class: "navbar-brand"
   .collapse.navbar-collapse
     ul.nav.navbar-nav
-      li = link_to "Entradas", admin_posts_path
-      li = link_to "Usuarios", admin_users_path
-      li = link_to "Preferencias", admin_preferences_path
+      = navbar_item "Entradas", admin_posts_path
+      = navbar_item "Usuarios", admin_users_path
+      = navbar_item "Preferencias", admin_preferences_path
     ul.nav.navbar-nav.navbar-right
       li.dropdown
         = link_to "#", class: "dropdown-toggle", data: { toggle: "dropdown" } do
