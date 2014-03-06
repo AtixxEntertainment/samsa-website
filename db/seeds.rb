@@ -8,7 +8,8 @@
 
 Rails.logger.debug "Creating default header characters.."
 
-[ {nombre: "gimb", profundidad: 5, posicion_horizontal: 7, posicion_vertical: -73},
+[ {nombre: "titulo", profundidad: -3, posicion_horizontal: 66, posicion_vertical: -6},
+  {nombre: "gimb", profundidad: 5, posicion_horizontal: 7, posicion_vertical: -73},
   {nombre: "camila", profundidad: 4, posicion_horizontal: 15, posicion_vertical: -42},
   {nombre: "hector", profundidad: 3, posicion_horizontal: 25, posicion_vertical: -41},
   {nombre: "lina", profundidad: 2, posicion_horizontal: 37, posicion_vertical: -150},
