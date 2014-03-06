@@ -1,0 +1,12 @@
+h1 = "#{attachment.new_record? ? "Agregar" : "Editar"} multimedia"
+
+- url = attachment.new_record? ? admin_media_path : admin_medium_path(attachment)
+
+= simple_form_for [:admin, attachment], url: url do |f|
+  .form-group = f.input :file, label: "Archivo"
+  - if f.object.file?
+    = f.object.decorate.file_link
+  .form-group = f.input :name, label: "Nombre", required: false, input_html: { class: "form-control" }
+  .actions
+    = link_to "Cancelar", admin_media_path, class: "btn btn-link"
+    = f.submit "Enviar", class: "btn btn-primary", data: { disable_with: "Enviando" }

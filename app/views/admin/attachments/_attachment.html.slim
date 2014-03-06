@@ -1,0 +1,11 @@
+.model_on_list
+  h3 = attachment.name
+  .row
+    .col-xs-1
+      = link_to edit_admin_medium_path(attachment), class: "btn btn-sm btn-default" do
+        span.glyphicon.glyphicon-edit
+    .col-xs-1
+      = link_to admin_medium_path(attachment), method: :delete, class: "btn btn-sm btn-danger" do
+        span.glyphicon.glyphicon-remove
+    .col-xs-6
+      = attachment.file_link

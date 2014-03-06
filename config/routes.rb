@@ -8,6 +8,7 @@ SamsaWebsite::Application.routes.draw do
 
   namespace :admin do
     resources :preferences
+    resources :media
     resources :header_characters
     resources :posts do
       collection do

@@ -1,0 +1,9 @@
+h1 Multimedia
+
+.pull-right
+  = link_to "", new_admin_medium_path, class: "btn btn-default glyphicon glyphicon-plus"
+
+- if attachments.any?
+  = render attachments
+- else
+  h3 No hay archivos multimedia
