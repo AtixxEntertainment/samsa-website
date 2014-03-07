@@ -4,5 +4,6 @@
   *= require profile-images
   *= require presets
   *= require header_characters
+  *= require common
   *= require_tree .
 */
