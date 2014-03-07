@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/NARKOZ/activerecord-reputation-system.git
+  revision: 01197ad78cac3136317b2884b61ed3da34c607d0
+  branch: rails4
+  specs:
+    activerecord-reputation-system (2.0.2)
+
+GIT
   remote: git://github.com/ctran/annotate_models.git
   revision: eb633bcf19c6a1242cb069e2e66829a9fa0021f1
   specs:
@@ -272,6 +279,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-reputation-system!
   annotate!
   better_errors
   binding_of_caller

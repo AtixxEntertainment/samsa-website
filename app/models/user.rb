@@ -20,4 +20,13 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+
+# comments reputation
+  has_many :evaluations, class_name: "RSEvaluation", as: :source
+  has_reputation :votes, source: {reputation: :votes, of: :comments}, aggregated_by: :sum
+
+# methods
+  def voted_for?(comment)
+    evaluations.where(target_type: comment.class, target_id: comment.id).present?
+  end
 end

@@ -96,3 +96,6 @@ end
 group :production do
   gem "rails_12factor"
 end
+
+# active record reputation system
+gem "activerecord-reputation-system", github: "NARKOZ/activerecord-reputation-system", branch: "rails4"
