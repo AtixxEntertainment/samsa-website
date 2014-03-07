@@ -1,0 +1,2 @@
+class CommentDecorator < ApplicationDecorator
+end

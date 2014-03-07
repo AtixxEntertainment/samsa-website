@@ -6,6 +6,15 @@ SamsaWebsite::Application.routes.draw do
 
   get :admin, to: "admin#index", constraints: AdminConstraint.new
 
+  resources :posts, only: :show do
+    resources :comments, only: :create do
+      collection do
+        post :like
+        post :dislike
+      end
+    end
+  end
+
   namespace :admin do
     resources :preferences
     resources :media

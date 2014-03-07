@@ -1,0 +1,16 @@
+.nav.nav-tabs
+  li
+    = navbar_item "Descarga", "#descarga", tab: true
+    = navbar_item "Plot", "#plot", tab: true
+    = navbar_item "Personajes", "#personajes", tab: true
+    = navbar_item "Comenta", "#comenta", tab: true
+
+.tab-content
+  #descarga.tab-pane
+    h1 Descarga
+  #plot.tab-pane
+    h1 Plot
+  #personajes.tab-pane
+    h1 Personajes
+  #comenta.tab-pane.active
+    = render "comments/index"
