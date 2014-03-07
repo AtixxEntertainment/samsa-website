@@ -19,4 +19,9 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
   validates :user_id, presence: true
+
+# class methods
+  def self.landing
+    find_by id: Preference.landing_page.value
+  end
 end
