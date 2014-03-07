@@ -14,6 +14,7 @@
 class Post < ActiveRecord::Base
 # relationships
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
 # validations
   validates :title, presence: true

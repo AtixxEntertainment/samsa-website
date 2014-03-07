@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(version: 20140306223957) do
 
   add_index "attachments", ["name"], name: "index_attachments_on_name", using: :btree
 
+  create_table "comments", force: true do |t|
+    t.integer  "post_id",                   null: false
+    t.integer  "user_id",                   null: false
+    t.text     "body",                      null: false
+    t.boolean  "visible",    default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+  add_index "comments", ["visible"], name: "index_comments_on_visible", using: :btree
+
   create_table "header_characters", force: true do |t|
     t.string   "nombre",                          null: false
     t.integer  "profundidad",         default: 1
