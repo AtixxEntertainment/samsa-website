@@ -16,4 +16,5 @@
 //= require turbolinks
 //= require retina
 //= require parallax
+//= require toastr
 //= require_tree .
