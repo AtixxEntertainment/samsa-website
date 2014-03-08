@@ -1,0 +1,11 @@
+- if comment.new_record?
+  | toastr.error("#{comment.errors.full_messages.join}");
+- else
+  |
+    (function(){
+      var $node = $("<div />", {html: "#{j render comment}"});
+      $node.hide();
+      $(".post_comments").append($node);
+      $node.slideDown();
+      $("#comment_body").val("");
+    })();

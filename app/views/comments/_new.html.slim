@@ -1,3 +1,9 @@
-= simple_form_for [post, comment] do |f|
-  = f.input :body
-  = f.submit
+= simple_form_for [post, comment], remote: true do |f|
+  .row.comment
+    .col-xs-1
+      = decorated_current_user.avatar
+    .col-xs-9
+      .comment_user_name = decorated_current_user.nombres
+      = f.input_field :body, placeholder: "Escribe tu comentario...", class: "form-control"
+    .col-xs-2
+      = f.submit "Comentar", class: "btn btn-default", data: { disable_with: "Comentando" }
