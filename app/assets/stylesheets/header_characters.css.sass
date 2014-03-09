@@ -1,2 +1,62 @@
-.header-character
-  max-height: 450px
+#header-wrapper
+  position: relative
+  padding: 5px 0
+  #header
+    margin: 5px 0
+    position: relative
+    overflow: hidden
+    background-image: url("/images/bg_sky.png")
+    z-index: -1
+    #header-bg-image
+    .header-character
+      position: absolute
+      display: inline-block
+
+.header-border
+  position: absolute
+  background-image: url("/images/header_margen_blanco.png")
+  background-size: 100%
+  height: 20px
+  width: 100%
+  z-index: 100
+  background-repeat: no-repeat
+  &.top
+    top: 0
+  &.bottom
+    bottom: 0
+
+@media (min-width: 400px)
+  #header
+    height: 260px
+    .header-character
+      max-height: 250px
+      max-width: 350px
+  #main
+    padding-top: 310px
+
+@media (min-width: 768px)
+  #header
+    height: 300px
+    .header-character
+      max-height: 290px
+      max-width: 390px
+  #main
+    padding-top: 340px
+
+@media (min-width: 900px)
+  #header
+    height: 350px
+    .header-character
+      max-height: 340px
+      max-width: 550px
+  #main
+    padding-top: 400px
+
+@media (min-width: 1200px)
+  #header
+    height: 460px
+    .header-character
+      max-height: 450px
+      max-width: 600px
+  #main
+    padding-top: 540px
