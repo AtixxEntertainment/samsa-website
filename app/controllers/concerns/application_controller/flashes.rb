@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
     extend ActiveSupport::Concern
 
     included do
-      add_flash_types :error, :success
+      add_flash_types :error, :success, :warning
     end
   end
 end
