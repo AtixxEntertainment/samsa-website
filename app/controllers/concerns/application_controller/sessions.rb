@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
     extend ActiveSupport::Concern
 
     included do
-      expose_decorated(:decorated_current_user, decorator: UserDecorator) { current_user }
+      expose_decorated(:decorated_current_user, decorator: UserDecorator) { current_user || GuestUser.new }
     end
 
     def current_user
