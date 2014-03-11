@@ -40,15 +40,11 @@ class CommentsController < ApplicationController
 
   def comments_require_login
     unless current_user
-      session[:comment_body] = comment_params[:body]
+      session[:attempt_comment] = { body: comment_params[:body], post_id: params[:post_id] }
       flash[:warning] = "Debes autenticarte"
       respond_to do |format|
-        format.html {
-          redirect_to login_path
-        }
-        format.js {
-          render :require_login
-        }
+        format.html { redirect_to login_path }
+        format.js { render :require_login }
       end
       false
     end

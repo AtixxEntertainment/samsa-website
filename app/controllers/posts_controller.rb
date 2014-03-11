@@ -1,5 +1,13 @@
 class PostsController < ApplicationController
-  expose :post
+  expose_decorated(:post)
+  expose_decorated(:comments) {
+    post.comments.includes(:user).by_votes
+  }
+  expose(:comment) {
+    body = session.to_hash.fetch(:attempt_comment, {}).fetch(:body, nil)
+    session[:attempt_comment] = nil
+    Comment.new body: body
+  }
 
   def like
     vote! 1
