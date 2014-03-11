@@ -1,3 +1,4 @@
 .show_post_body = post.body
-#comentario_destacado
-  h1 Aquí el comentario destacado
+- if defined?(comments) and comments.first
+  #comentario_destacado
+    = render comments.first
