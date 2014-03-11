@@ -23,6 +23,7 @@ class CommentsController < ApplicationController
 
   def vote
     self.comment = Comment.find(params[:id])
+    render :cant_vote and return if current_user == comment.user
     value = params[:value] == "up" ? 1 : -1
     comment.add_or_update_evaluation :votes, value, current_user
     respond_to do |format|
