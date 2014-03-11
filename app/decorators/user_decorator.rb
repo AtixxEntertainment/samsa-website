@@ -1,6 +1,22 @@
 class UserDecorator < ApplicationDecorator
   def avatar(size: nil, margin: "little-horizontal-margin", classes: "profile-image")
-    h.image_tag imagen, class: "#{classes} #{size} #{margin} no_retina"
+    h.link_to profile_url, target: "_blank" do
+      h.image_tag imagen, class: "#{classes} #{size} #{margin} no_retina"
+    end
+  end
+
+  def nombres_with_link(options={})
+    h.link_to nombres, profile_url, options.merge(target: "_blank")
+  end
+
+  def profile_url
+    return nil unless profile
+    case profile.provider
+    when "twitter"
+      profile.urls["Twitter"]
+    when "facebook"
+      profile.urls["Facebook"]
+    end
   end
 
   def email

@@ -1,8 +1,9 @@
+- user = comment.user.decorate
 .row.comment id="comment_#{comment.id}"
   .col-xs-1
-    = comment.user.decorate.avatar
+    = user.decorate.avatar
   .col-xs-9
-    .comment_user_name = comment.user.nombres
+    .comment_user_name = user.nombres_with_link
     = comment.body
   .col-xs-2.vote_buttons
     = comment.votes
