@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if comment.save
         format.html { redirect_to :back }
-        format.js
+        format.js { self.comment = comment.decorate }
       else
         format.html {
           redirect_to :back, error: comment.errors.full_messages.join
