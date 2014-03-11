@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-  before_filter :require_login, only: :create
+  before_filter :comments_require_login, only: :create
+  before_filter :require_login, only: :vote
 
   expose(:post) { Post.cached_find params[:post_id] }
   expose :comment, attributes: :comment_params
@@ -20,13 +21,23 @@ class CommentsController < ApplicationController
     end
   end
 
+  def vote
+    self.comment = Comment.find(params[:id])
+    value = params[:value] == "up" ? 1 : -1
+    comment.add_or_update_evaluation :votes, value, current_user
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js { self.comment = comment.decorate }
+    end
+  end
+
   private
 
   def comment_params
     params.require(:comment).permit :body
   end
 
-  def require_login
+  def comments_require_login
     unless current_user
       session[:comment_body] = comment_params[:body]
       flash[:warning] = "Debes autenticarte"

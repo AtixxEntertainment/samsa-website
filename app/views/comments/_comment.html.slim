@@ -1,6 +1,9 @@
 .row.comment id="comment_#{comment.id}"
   .col-xs-1
     = comment.user.decorate.avatar
-  .col-xs-11
+  .col-xs-9
     .comment_user_name = comment.user.nombres
     = comment.body
+  .col-xs-2.vote_buttons
+    = comment.votes
+    = comment.vote_buttons

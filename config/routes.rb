@@ -10,9 +10,8 @@ SamsaWebsite::Application.routes.draw do
 
   resources :posts, only: :show do
     resources :comments, only: :create do
-      collection do
-        post :like
-        post :dislike
+      member do
+        post "vote/:value", to: "comments#vote", as: :vote
       end
     end
   end
