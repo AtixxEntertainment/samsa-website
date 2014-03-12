@@ -22,6 +22,6 @@ class Comment < ActiveRecord::Base
   end
 
   def votes
-    reputation_for(:votes).to_i
+    @votes ||= reputation_for(:votes).to_i
   end
 end
