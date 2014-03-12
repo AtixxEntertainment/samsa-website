@@ -5,8 +5,7 @@ class Comment < ActiveRecord::Base
 
 # scopes
   scope :by_votes, -> {
-    # find_with_reputation(:votes, :all, sort: "votes desc")   # doesn't work with rails 4
-    all.sort { |x,y| y.votes <=> x.votes }
+    order(votes: :desc)
   }
 
 # validations
@@ -21,7 +20,13 @@ class Comment < ActiveRecord::Base
     errors.add(:base, "No puedes agregar comentarios") if user.banned?
   end
 
-  def votes
-    @votes ||= reputation_for(:votes).to_i
+  def update_votes_count!
+    update votes: reputation_for(:votes).to_i
+  end
+
+  def vote!(value, user)
+    int_value = if value == "up" then 1 else -1 end
+    add_or_update_evaluation :votes, int_value, user
+    update_votes_count!
   end
 end
