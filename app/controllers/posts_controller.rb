@@ -17,6 +17,11 @@ class PostsController < ApplicationController
     vote! -1
   end
 
+  def random_comment
+    offset = rand post.comments.count
+    self.comments = [post.comments.first(offset: offset)]
+  end
+
   private
 
   def vote!(value)

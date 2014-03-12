@@ -9,6 +9,9 @@ SamsaWebsite::Application.routes.draw do
   get :admin, to: "admin#index", constraints: AdminConstraint.new
 
   resources :posts, only: :show do
+    member do
+      get :random_comment
+    end
     resources :comments, only: :create do
       member do
         post "vote/:value", to: "comments#vote", as: :vote
