@@ -13,10 +13,10 @@
 
 class Post < ActiveRecord::Base
   include Cacheable
-#   extend FriendlyId
+  extend FriendlyId
 
-# # friendly id
-#   friendly_id :title, use: :slugged
+# friendly id
+  friendly_id :title, use: :slugged
 
 # relationships
   belongs_to :user
@@ -26,6 +26,11 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
   validates :user_id, presence: true
+
+# methods
+  def parameterize
+    slug
+  end
 
 # class methods
   def self.landing

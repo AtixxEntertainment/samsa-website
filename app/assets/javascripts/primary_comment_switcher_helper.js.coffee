@@ -4,16 +4,16 @@ window.helpers.primaryCommentSwitcherHelper =
   timeoutId: null
 
   updateWith: (html) ->
-    htmlContent = $(html).html()
-    @$node.html htmlContent
-    @$node.fadeIn()
+    @$node.fadeOut =>
+      htmlContent = $(html).html()
+      @$node.html htmlContent
+      @$node.fadeIn()
 
   scheduleCommentChange: ->
-    @$node.fadeOut =>
-      @timeoutId = setTimeout =>
-        $.getScript "/posts/#{@$node.data("post_id")}/random_comment"
-        @scheduleCommentChange()
-      , 5000 # 5 seconds
+    @timeoutId = setTimeout =>
+      $.getScript "/posts/#{@$node.data("post_id")}/random_comment"
+      @scheduleCommentChange()
+    , 10000 # 10 seconds
 
   init: ->
     clearTimeout(@timeoutId) if @timeoutId

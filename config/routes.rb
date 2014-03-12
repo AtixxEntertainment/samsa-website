@@ -38,5 +38,5 @@ SamsaWebsite::Application.routes.draw do
 
   root "home#index"
 
-  get "*a", to: "application#routing_error"
+  get "/:id", to: "posts#show"
 end
