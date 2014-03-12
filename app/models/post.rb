@@ -13,6 +13,10 @@
 
 class Post < ActiveRecord::Base
   include Cacheable
+#   extend FriendlyId
+
+# # friendly id
+#   friendly_id :title, use: :slugged
 
 # relationships
   belongs_to :user
