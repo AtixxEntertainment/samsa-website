@@ -102,6 +102,8 @@ GEM
       multipart-post (~> 1.2.0)
     ffi (1.9.3)
     formatador (0.2.4)
+    friendly_id (5.0.3)
+      activerecord (>= 4.0.0)
     github-markdown (0.6.4)
     guard (2.4.0)
       formatador (>= 0.2.4)
@@ -293,6 +295,7 @@ DEPENDENCIES
   draper
   exception_notification
   factory_girl_rails
+  friendly_id (~> 5.0.0)
   github-markdown
   guard-rspec
   jbuilder (~> 1.2)

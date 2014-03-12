@@ -99,3 +99,6 @@ end
 
 # active record reputation system
 gem "activerecord-reputation-system", github: "NARKOZ/activerecord-reputation-system", branch: "rails4"
+
+# friendly id
+gem "friendly_id", "~> 5.0.0"
