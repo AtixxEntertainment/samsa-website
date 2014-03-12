@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   end
 
   def random_comment
-    self.comments = [post.comments.random.decorate]
+    self.comments = post.comments.random.decorate
   end
 
   private
