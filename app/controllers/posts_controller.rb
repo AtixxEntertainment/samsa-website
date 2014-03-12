@@ -20,8 +20,7 @@ class PostsController < ApplicationController
   end
 
   def random_comment
-    offset = rand post.comments.count
-    self.comments = [post.comments.offset(offset).first]
+    self.comments = [post.comments.random.decorate]
   end
 
   private

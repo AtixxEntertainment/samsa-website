@@ -29,4 +29,10 @@ class Comment < ActiveRecord::Base
     add_or_update_evaluation :votes, int_value, user
     update_votes_count!
   end
+
+# class methods
+  def self.random
+    offset = rand count
+    offset(offset).limit(1)
+  end
 end
