@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     Post.friendly.find params[:id]
   }
   expose_decorated(:comments) {
-    post.comments.includes(:user).by_votes
+    post.comments.includes(user: :profile).by_votes
   }
   expose(:comment) {
     body = session.to_hash.fetch(:attempt_comment, {}).fetch(:body, nil)
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   def random_comment
     offset = rand post.comments.count
-    self.comments = [post.comments.first(offset: offset)]
+    self.comments = [post.comments.offset(offset).first]
   end
 
   private
