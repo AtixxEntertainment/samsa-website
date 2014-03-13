@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def posts_in_navbar
-    Post.in_navbar
+    @posts_in_navbar ||= Post.in_navbar
   end
 end

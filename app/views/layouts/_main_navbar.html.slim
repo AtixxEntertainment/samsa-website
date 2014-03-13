@@ -1,3 +1,6 @@
-- posts_in_navbar.each do |post|
-  - link = post.landing? ? root_path : post_path(post)
-  = link_to post.title, link
+- width = 100.0 / posts_in_navbar.count
+#main_navbar
+  - posts_in_navbar.each do |post|
+    .navbar-item style="width: #{width}%;"
+      - link = post.landing? ? root_path : post_path(post)
+      = link_to_unless_current post.title, link
