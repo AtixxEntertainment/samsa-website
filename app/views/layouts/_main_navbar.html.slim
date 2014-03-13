@@ -1,0 +1,3 @@
+- posts_in_navbar.each do |post|
+  - link = post.landing? ? root_path : post_path(post)
+  = link_to post.title, link

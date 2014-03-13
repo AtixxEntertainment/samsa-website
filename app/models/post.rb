@@ -9,11 +9,16 @@
 #  user_id    :integer          not null
 #  created_at :datetime
 #  updated_at :datetime
+#  slug       :string(255)
+#  navbar     :boolean          default(FALSE)
 #
 
 class Post < ActiveRecord::Base
   include Cacheable
   extend FriendlyId
+
+# scopes
+  scope :in_navbar, -> { where(navbar: true) }
 
 # friendly id
   friendly_id :title, use: :slugged

@@ -21,5 +21,6 @@ html
     #main-wrapper
       #main
         = yield
-        = render "layouts/navbar"
-        = yield :footer
+        = render "layouts/main_navbar"
+        #comenta
+          = render "comments/index"
