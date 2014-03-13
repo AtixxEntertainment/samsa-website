@@ -2,7 +2,7 @@
 module Admin
   class PostsController < AdminController
     expose_decorated :posts
-    expose(:post, attributes: :post_params) { Post.friendly.find params[:id] }
+    expose :post, attributes: :post_params
 
     def show
       self.post = post.decorate

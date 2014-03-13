@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   before_filter :comments_require_login, only: :create
   before_filter :require_login, only: :vote
 
-  expose(:post) { Post.friendly.find params[:post_id] }
+  expose(:post) { Post.find params[:post_id] }
   expose :comment, attributes: :comment_params
 
   def create

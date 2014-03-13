@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
-  expose_decorated(:post) {
-    Post.friendly.find params[:id]
-  }
+  expose_decorated :post
   expose_decorated(:comments) {
     post.comments.includes(user: :profile).by_votes
   }
