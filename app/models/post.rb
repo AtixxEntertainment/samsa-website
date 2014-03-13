@@ -37,6 +37,10 @@ class Post < ActiveRecord::Base
     slug
   end
 
+  def landing?
+    id == Preference.landing_page.value.to_i
+  end
+
 # class methods
   def self.landing
     find_by id: Preference.landing_page.value

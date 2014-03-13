@@ -11,6 +11,15 @@ class PostsController < ApplicationController
     Comment.new body: body
   }
 
+  def index
+    self.post = Post.landing
+    render :show
+  end
+
+  def show
+    redirect_to root_path if post.landing?
+  end
+
   def like
     vote! 1
   end

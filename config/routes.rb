@@ -36,7 +36,7 @@ SamsaWebsite::Application.routes.draw do
     end
   end
 
-  root "home#index"
+  root "posts#index"
 
   get "/:id", to: "posts#show"
 end

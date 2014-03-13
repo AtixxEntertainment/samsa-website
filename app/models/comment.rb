@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: comments
+#
+#  id         :integer          not null, primary key
+#  post_id    :integer          not null
+#  user_id    :integer          not null
+#  body       :text             not null
+#  visible    :boolean          default(TRUE)
+#  created_at :datetime
+#  updated_at :datetime
+#  votes      :integer          default(0)
+#
+
 class Comment < ActiveRecord::Base
 # relationships
   belongs_to :user
