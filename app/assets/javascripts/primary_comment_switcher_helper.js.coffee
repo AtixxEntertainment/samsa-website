@@ -22,4 +22,4 @@ window.helpers.primaryCommentSwitcherHelper =
       @scheduleCommentChange()
 
 jQuery -> helpers.primaryCommentSwitcherHelper.init()
-$(document).on "page:load", helpers.primaryCommentSwitcherHelper.init()
+$(document).on "page:change", -> helpers.primaryCommentSwitcherHelper.init()
