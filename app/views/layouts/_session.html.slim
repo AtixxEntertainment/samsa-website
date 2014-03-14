@@ -1,0 +1,7 @@
+#session-status
+  - if current_user
+    span = decorated_current_user.avatar
+    span = decorated_current_user.nombres
+    span = link_to "cerrar sesión", logout_path
+  - else
+    = link_to_unless_current "autenticarse", login_path
