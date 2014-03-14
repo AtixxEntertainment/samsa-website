@@ -22,6 +22,11 @@ module Admin
       end
     end
 
+    def destroy
+      header_character.destroy
+      redirect_to action: :index
+    end
+
     private
 
     def header_character_params

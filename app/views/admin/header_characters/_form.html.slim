@@ -26,6 +26,7 @@ h1 = "#{header_character.new_record? ? "Nuevo" : "Editar"} personaje"
     = header_character.decorate.avatar classes: "current-character"
   .post-header-preview
   .actions
+    = link_to "Eliminar", admin_header_character_path(header_character), class: "btn btn-danger", method: :delete, data: { confirm: "¿Estás seguro?" }
     = f.submit "Enviar", class: "btn btn-default", data: { disable_with: "Enviando" }
 
 = javascript_tag "new Atixx.HeaderCharactersPositionHelper();"
