@@ -13,8 +13,11 @@ class ApplicationController < ActionController::Base
 
     def require_login
       unless current_user
-        flash[:error] = "Por favor inicia sesión"
-        redirect_to login_path
+        flash[:error] = "Debes autenticarte"
+        respond_to do |format|
+          format.html { redirect_to login_path }
+          format.js { render "layouts/require_login" }
+        end
         false
       end
     end

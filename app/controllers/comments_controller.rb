@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
   expose :comment, attributes: :comment_params
 
   def create
+    session[:attempt_comment] = nil
     comment.user = current_user
     comment.post = post
     respond_to do |format|
@@ -43,7 +44,7 @@ class CommentsController < ApplicationController
       flash[:warning] = "Debes autenticarte"
       respond_to do |format|
         format.html { redirect_to login_path }
-        format.js { render :require_login }
+        format.js { render "layouts/require_login" }
       end
       false
     end
