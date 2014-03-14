@@ -1,8 +1,10 @@
 class UserDecorator < ApplicationDecorator
   def avatar(size: nil, margin: "little-horizontal-margin", classes: "profile-image")
-    h.link_to profile_url, target: "_blank" do
-      h.image_tag imagen, class: "#{classes} #{size} #{margin} no_retina"
-    end
+    h.image_tag imagen, class: "#{classes} #{size} #{margin} no_retina"
+  end
+
+  def avatar_with_link(*args)
+    h.link_to avatar(*args), profile_url, target: "_blank"
   end
 
   def nombres_with_link(options={})

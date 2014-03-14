@@ -1,7 +1,7 @@
 - user = comment.user.decorate
 .row.comment id="comment_#{comment.id}"
   .col-xs-1
-    = user.decorate.avatar
+    = user.decorate.avatar_with_link
   .col-xs-9
     .comment_user_name = user.nombres_with_link
     = comment.body
