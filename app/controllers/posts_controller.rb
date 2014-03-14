@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   }
   expose(:comment) {
     body = session.to_hash.fetch("attempt_comment", {}).fetch(:body, nil)
-    binding.pry
     Comment.new body: body
   }
 
