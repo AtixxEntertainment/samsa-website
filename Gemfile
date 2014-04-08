@@ -37,6 +37,8 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
+gem "airbrake"
+
 # Use unicorn as the app server
 gem "unicorn"
 
@@ -50,9 +52,6 @@ gem "dotenv-rails"
 
 gem "slim"
 gem "kaminari"
-gem "exception_notification"
-gem "rspec-rails"
-gem "rb-fsevent"
 
 gem "omniauth-facebook"
 gem "omniauth-twitter"

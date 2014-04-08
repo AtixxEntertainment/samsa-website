@@ -27,9 +27,4 @@ class ApplicationController < ActionController::Base
   def render_not_found(exception=nil)
     render :template => "/errors/404.html.slim", :layout => "application.html.slim", :status => 404
   end
-
-  def render_error(exception)
-    ExceptionNotifier::Notifier.exception_notification(request.env,exception).deliver
-    render :template => "/errors/500.html.slim", :layout => "application.html.slim", :status => 500
-  end
 end

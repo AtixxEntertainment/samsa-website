@@ -20,3 +20,4 @@ config/database.yml
 config/email.yml
 .env
 public/uploads/*
+.ruby-version
