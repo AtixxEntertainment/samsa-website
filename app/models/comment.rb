@@ -18,9 +18,8 @@ class Comment < ActiveRecord::Base
   belongs_to :post
 
 # scopes
-  scope :by_votes, -> {
-    order(votes: :desc)
-  }
+  scope :visible, -> { where(visible: true) }
+  scope :by_votes, -> { order(votes: :desc) }
 
 # validations
   validates :user_id, :post_id, :body, presence: true

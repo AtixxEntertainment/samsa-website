@@ -5,6 +5,8 @@
   .col-xs-9
     .comment_user_name = user.nombres_with_link
     = comment.body
+    = comment.visibility if current_user and current_user.admin?
   .col-xs-2.vote_buttons
     = comment.votes
     = comment.vote_buttons
+    = comment.moderate_buttons if current_user and current_user.admin?

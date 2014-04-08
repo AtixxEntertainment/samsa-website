@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   expose_decorated :post
   expose_decorated(:comments) {
-    post.comments.includes(user: :profile).by_votes
+    scope = post.comments.includes(user: :profile).by_votes
+    scope = scope.visible unless current_user.try(:admin?)
+    scope
   }
   expose(:comment) {
     body = session.to_hash.fetch("attempt_comment", {}).fetch(:body, nil)

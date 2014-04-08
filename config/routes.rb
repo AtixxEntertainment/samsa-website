@@ -34,6 +34,11 @@ SamsaWebsite::Application.routes.draw do
         get :ban
       end
     end
+    resources :comments do
+      member do
+        post :toggle
+      end
+    end
   end
 
   root "posts#index"
