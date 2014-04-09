@@ -19,6 +19,7 @@ class Post < ActiveRecord::Base
 
 # scopes
   scope :in_navbar, -> { where(navbar: true) }
+  scope :only_link, -> { select(:id, :title, :slug) }
 
 # friendly id
   friendly_id :title, use: :slugged

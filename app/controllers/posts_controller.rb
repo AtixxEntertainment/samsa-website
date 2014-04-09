@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   expose_decorated :post
   expose_decorated(:comments) {
-    scope = post.comments.includes(user: :profile).by_votes
+    scope = post.comments.with_user.by_votes
     scope = scope.visible unless current_user.try(:admin?)
     scope
   }

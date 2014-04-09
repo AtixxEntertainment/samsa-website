@@ -20,6 +20,8 @@ class Comment < ActiveRecord::Base
 # scopes
   scope :visible, -> { where(visible: true) }
   scope :by_votes, -> { order(votes: :desc) }
+  scope :recent, -> { order(id: :desc) }
+  scope :with_user, -> { includes(user: :profile) }
 
 # validations
   validates :user_id, :post_id, :body, presence: true

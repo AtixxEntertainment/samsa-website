@@ -1,0 +1,9 @@
+h2 Comentarios recientes
+
+.comentarios_recientes
+  - latest_post_comments.each do |post|
+    .margin-vertical-small
+      | en&nbsp;
+      = post.title_with_admin_link
+      - latest_comments[post.id].each do |comment|
+        = render comment.decorate

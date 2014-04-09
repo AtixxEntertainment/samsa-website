@@ -5,6 +5,10 @@ class PostDecorator < ApplicationDecorator
     end
   end
 
+  def title_with_admin_link
+    h.link_to title, h.admin_post_path(object)
+  end
+
   def author
     text = "#{object.user.nombres} el #{I18n.l created_at, format: :short}"
     h.content_tag :div, text, class: "light"
