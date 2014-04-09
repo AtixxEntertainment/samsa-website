@@ -3,10 +3,13 @@
   .col-xs-1
     = user.decorate.avatar_with_link
   .col-xs-9
-    .comment_user_name = user.nombres_with_link
+    .comment_header
+      = user.nombres_with_link(class: "user_name")
+      = comment.created_at
     = comment.body
     = comment.visibility if current_user and current_user.admin?
   .col-xs-2.vote_buttons
     = comment.votes
     = comment.vote_buttons
-    = comment.moderate_buttons if current_user and current_user.admin?
+    - if current_user and current_user.admin?
+      .action-buttons = comment.moderate_buttons

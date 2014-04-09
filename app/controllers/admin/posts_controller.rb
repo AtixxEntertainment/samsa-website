@@ -2,6 +2,7 @@
 module Admin
   class PostsController < AdminController
     expose_decorated :posts
+    expose_decorated(:comments) { post.comments.includes(user: :profile).order(:id) }
     expose :post, attributes: :post_params
 
     def show

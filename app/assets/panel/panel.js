@@ -17,5 +17,6 @@
 //= require turbolinks
 //= require retina
 //= require retina_initializer
+//= require comments
 //= require_tree .
 window.Atixx = {}
