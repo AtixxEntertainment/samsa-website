@@ -37,7 +37,7 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
-gem "airbrake_user_attributes"
+gem "airbrake"
 
 # Use unicorn as the app server
 gem "unicorn"
