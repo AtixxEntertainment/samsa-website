@@ -1,7 +1,7 @@
 # encoding: utf-8
 module Admin
   class PostsController < AdminController
-    expose_decorated :posts
+    expose_decorated(:posts) { Post.includes(:user) }
     expose_decorated(:comments) { post.comments.with_user.order(:id) }
     expose :post, attributes: :post_params
 
