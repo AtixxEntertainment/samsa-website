@@ -1,3 +1,9 @@
 .model_on_list
   h3 = post.title_with_admin_link
-  = post.status
+  .row
+    .col-xs-6
+      = post.author
+    .col-xs-2
+      = post.comments_count
+    .col-xs-4
+      = post.status

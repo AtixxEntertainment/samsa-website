@@ -18,6 +18,11 @@ class PostDecorator < ApplicationDecorator
     GitHub::Markdown.render(object.body).html_safe
   end
 
+  def comments_count
+    text = h.pluralize comments.count, "comentario"
+    h.content_tag :div, text, class: "light"
+  end
+
   private
 
   # status
