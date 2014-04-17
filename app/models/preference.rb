@@ -55,6 +55,12 @@ class Preference < ActiveRecord::Base
     end
   end
 
+  def self.subscribers_emails
+    User.select(:email).where(id: subscribers.value).map do |user|
+      user.email
+    end.compact
+  end
+
   def self.preference(name)
     find_by! name: name
   end

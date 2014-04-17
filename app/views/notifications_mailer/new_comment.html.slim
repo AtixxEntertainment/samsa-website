@@ -1,0 +1,24 @@
+link rel="stylesheet" href="bootstrap.css"
+link rel="stylesheet" href="presets.css"
+
+.well
+  p Hola,
+  p
+    | Te escribimos para notificarte que hay un nuevo comentario en&nbsp;
+    = link_to @post, post_url(@post)
+
+  .row.well
+    .col-xs-3.align_center
+      = @comment.user.decorate.avatar
+      div = @comment.user.nombres
+    .col-xs-9
+      = @comment.body
+
+  p
+    | Recuerda que puedes ver los últimos comentarios en el&nbsp;
+    = link_to "panel de administración", admin_url
+
+  p
+    | Recibiste este correo porque estás dentro de la lista de suscriptores de&nbsp;
+    = root_url
+

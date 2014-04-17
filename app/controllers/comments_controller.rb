@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
     comment.post = post
     respond_to do |format|
       if comment.save
+        CommentCreatedJob.new.async.perform comment.id
         format.html { redirect_to :back }
         format.js { self.comment = comment.decorate }
       else
