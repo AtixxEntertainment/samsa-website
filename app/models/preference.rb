@@ -33,7 +33,7 @@ class Preference < ActiveRecord::Base
   def value
     @value ||= begin
       value = read_attribute(:value)
-      if value.include?(",")
+      if value.to_s.include?(",")
         value.split(",")
       else
         value
