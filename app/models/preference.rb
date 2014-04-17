@@ -19,10 +19,39 @@ class Preference < ActiveRecord::Base
     Rails.cache.delete [self.class.name, name]
   end
 
+  def to_s
+    name.to_s
+  end
+
+  def value=(new_value)
+    if new_value.is_a?(Array)
+      new_value = new_value.compact.reject(&:blank?).join(",")
+    end
+    super(new_value)
+  end
+
+  def value
+    @value ||= begin
+      value = read_attribute(:value)
+      if value.include?(",")
+        value.split(",")
+      else
+        value
+      end
+    end
+  end
+
 # class methods
-  def self.landing_page
-    Rails.cache.fetch([name, "landing_page"]) do
-      where(name: "landing_page").first_or_initialize
+  cattr_accessor :preferences
+  self.preferences = [:landing_page, :subscribers]
+
+  self.preferences.each do |preference|
+    self.class.instance_eval do
+      define_method preference do
+        Rails.cache.fetch([name, preference]) do
+          where(name: preference).first_or_initialize
+        end
+      end
     end
   end
 

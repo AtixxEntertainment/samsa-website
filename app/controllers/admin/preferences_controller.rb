@@ -3,8 +3,12 @@ module Admin
   class PreferencesController < AdminController
     expose_decorated :header_characters
     expose(:landing_page) { Preference.landing_page }
+    expose(:subscribers) { Preference.subscribers }
     expose(:possible_posts) {
       Post.select(:id, :title).collect {|post| [post.title, post.id]}
+    }
+    expose(:possible_subscriptors) {
+      User.admins.select(:id, :nombres).collect {|user| [user.nombres, user.id]}
     }
 
     def update
@@ -18,7 +22,7 @@ module Admin
     end
 
     def preference_attributes
-      params.require(:preference).permit :value
+      params.require(:preference).permit!.slice :value # allow value to be simple or complex value
     end
   end
 end

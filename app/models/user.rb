@@ -16,6 +16,9 @@ class User < ActiveRecord::Base
   include Cacheable
   include Authenticable
 
+# scopes
+  scope :admins, -> { where(admin: true) }
+
 # relationships
   has_one :profile
   has_many :posts, dependent: :destroy

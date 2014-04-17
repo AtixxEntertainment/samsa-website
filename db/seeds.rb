@@ -23,7 +23,8 @@ Rails.logger.debug "Creating default header characters.."
 end
 
 Rails.logger.debug "Creating default preferences.."
-[{name: "landing_page", value: 1}].each do |preference|
+[{name: "landing_page", value: 1},
+ {name: "subscribers", value: 1}].each do |preference|
   Preference.create preference
 end
 
