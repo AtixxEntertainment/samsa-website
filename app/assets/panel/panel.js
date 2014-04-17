@@ -17,6 +17,7 @@
 //= require turbolinks
 //= require retina
 //= require retina_initializer
+//= require chosen.jquery.min
 //= require comments
 //= require_tree .
 window.Atixx = {}
