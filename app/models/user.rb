@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
 
 # scopes
   scope :admins, -> { where(admin: true) }
+  scope :with_email, -> { where.not(email: nil) }
 
 # relationships
   has_one :profile

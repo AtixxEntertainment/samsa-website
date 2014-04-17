@@ -8,7 +8,7 @@ module Admin
       Post.select(:id, :title).collect {|post| [post.title, post.id]}
     }
     expose(:possible_subscriptors) {
-      User.admins.select(:id, :nombres).collect {|user| [user.nombres, user.id]}
+      User.with_email.admins.select(:id, :nombres).collect {|user| [user.nombres, user.id]}
     }
 
     def update
