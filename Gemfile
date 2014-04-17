@@ -101,3 +101,5 @@ gem "activerecord-reputation-system", github: "NARKOZ/activerecord-reputation-sy
 
 # friendly id
 gem "friendly_id", "~> 5.0.0"
+# backgrounding
+gem "sucker_punch"
