@@ -12,7 +12,6 @@
 #
 
 class HeaderCharacter < ActiveRecord::Base
-  include Caching
 # validations
   validates :nombre, presence: true, uniqueness: true
 
