@@ -7,9 +7,14 @@
 "es":
   ui:
     login: Autentificarse
+    logout: Cerrar sesión
+    admin: Administración
     locale:
       es: Español
       en: English
+    landing:
+      message: "Este juego es gratuito gracias al esfuerzo de creadores independientes y sus patrocinadores, descárgatelo gratis pero no te olvides de apoyar el proyecto dándole un like a nuestros socios, así podremos seguir haciendo esto de manera gratuita, de fans para fans. Gracias."
+
   views:
     pagination:
       previous: "&lt;"
