@@ -4,6 +4,6 @@
       = decorated_current_user.avatar
     .col-xs-9
       .comment_user_name = decorated_current_user.nombres
-      = f.input_field :body, placeholder: "Escribe tu comentario...", class: "form-control"
+      = f.input_field :body, placeholder: t("ui.comments.placeholder"), class: "form-control"
     .col-xs-2
-      = f.submit "Comentar", class: "btn btn-default", data: { disable_with: "Comentando" }
+      = f.submit t("ui.comments.submit"), class: "btn btn-default", data: { disable_with: t("ui.comments.submitting") }

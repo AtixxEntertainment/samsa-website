@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
     def require_login
       unless current_user
-        flash[:error] = "Debes autenticarte"
+        flash[:error] = I18n.t("ui.session.require_login")
         respond_to do |format|
           format.html { redirect_to login_path }
           format.js { render "layouts/require_login" }

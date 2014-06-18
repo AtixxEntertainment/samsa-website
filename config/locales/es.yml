@@ -1,10 +1,4 @@
-# Spanish translations for Rails
-# by Francisco Fernando García Nieto (ffgarcianieto@gmail.com)
-# contributors:
-#  - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
-# Corrected by Eloy Serra Labán: http://goo.gl/i9Kts, /nQ928, /XfKaX
-
-"es":
+es:
   ui:
     login: Autentificarse
     logout: Cerrar sesión
@@ -12,8 +6,16 @@
     locale:
       es: Español
       en: English
+    session:
+      require_login: Debes autentificarte
+      welcome: Puedes autentificarte con tu cuenta de twitter o facebook
+    comments:
+      placeholder: Escribe tu comentario...
+      submit: Comentar
+      submitting: Comentando...
     landing:
       message: "Este juego es gratuito gracias al esfuerzo de creadores independientes y sus patrocinadores, descárgatelo gratis pero no te olvides de apoyar el proyecto dándole un like a nuestros socios, así podremos seguir haciendo esto de manera gratuita, de fans para fans. Gracias."
+
 
   views:
     pagination:
