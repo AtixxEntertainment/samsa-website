@@ -30,7 +30,6 @@ class Post < ActiveRecord::Base
 
 # validations
   validates :title, presence: true
-  validates :body, presence: true
   validates :user_id, presence: true
 
 # methods

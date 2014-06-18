@@ -2,7 +2,6 @@
 module Admin
   class PreferencesController < AdminController
     expose_decorated :header_characters
-    expose(:landing_page) { Preference.landing_page }
     expose(:subscribers) { Preference.subscribers }
     expose(:possible_posts) {
       Post.select(:id, :title).collect {|post| [post.title, post.id]}

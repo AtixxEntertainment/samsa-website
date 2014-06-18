@@ -1,8 +1,0 @@
-= form_for [:admin, landing_page], remote: true do |f|
-  = f.hidden_field :name
-  .row
-    .col-xs-3.align_right
-      = f.label :value, "Página principal"
-    .col-xs-6
-      = f.select :value, possible_posts
-    .col-xs-3 id="preference_#{landing_page}"

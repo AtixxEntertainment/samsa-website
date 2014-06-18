@@ -12,7 +12,6 @@ class PostsController < ApplicationController
 
   def index
     self.post = Post.landing
-    render :show
   end
 
   def show

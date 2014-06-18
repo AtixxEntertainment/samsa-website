@@ -30,5 +30,5 @@ end
 
 unless Post.exists?(title: "Inicio")
   Rails.logger.debug "Creating Inicio page"
-  Post.create published: true, user_id: 1, title: "Inicio", body: "<div class=\"row\">\r\n<div class=\"col-xs-6 bg_mensaje_tokiro\">\r\nEste juego es gratuito gracias al esfuerzo de creadores independientes y sus patrocinadores, descárgatelo gratis pero no te olvides de apoyar el proyecto dándole un like a nuestros socios, así podremos seguir haciendo esto de manera gratuita, de fans para fans.\r\nGracias.\r\n<div class=\"align_right\">Tokiro</div>\r\n<div class=\"post_division\"></div>\r\n<div class=\"align_center\"><div class=\"post_descarga\"></div></div>\r\n<div class=\"align_center\"><div class=\"post_logo_atixx\"></div></div>\r\n</div>\r\n<div class=\"col-xs-6\">\r\n<div class=\"post_bg_sponsor align_center\"><div class=\"post_logo_arcimego\"></div></div>\r\n<div class=\"post_bg_sponsor align_center\"><div class=\"post_logo_ile\"></div></div>\r\n</div>\r\n</div>"
+  Post.create published: true, user_id: 1, title: "Inicio", body: ""
 end
