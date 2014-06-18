@@ -5,6 +5,11 @@
 # Corrected by Eloy Serra Labán: http://goo.gl/i9Kts, /nQ928, /XfKaX
 
 "es":
+  ui:
+    login: Autentificarse
+    locale:
+      es: Español
+      en: English
   views:
     pagination:
       previous: "&lt;"

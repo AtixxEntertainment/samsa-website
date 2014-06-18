@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  ui:
+    login: Login
+    locale:
+      es: Español
+      en: English
