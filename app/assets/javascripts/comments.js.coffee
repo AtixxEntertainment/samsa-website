@@ -7,7 +7,12 @@ $(document).on "click", ".comment_header .date", (e) ->
 $(document).on "click", ".comment-btn", ->
   $(".new-comment-form").bPopup
     speed: 400,
-    transition: "slideDown"
+    transition: "slideDown",
+    positionStyle: "fixed",
+    onOpen: ->
+      $(".comment-btn").addClass "active"
+    onClose: ->
+      $(".comment-btn").removeClass "active"
   false
 
 # apply elastic to comment form
