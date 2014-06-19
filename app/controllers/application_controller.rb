@@ -11,4 +11,10 @@ class ApplicationController < ActionController::Base
   decent_configuration do
     strategy DecentExposure::StrongParametersStrategy
   end
+
+  expose(:posts_in_navbar) { Post.in_navbar }
+  expose_decorated(:all_header_characters,
+                   decorator: Draper::CollectionDecorator) {
+    HeaderCharacter.all
+  }
 end
