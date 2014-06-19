@@ -17,4 +17,6 @@
 //= require retina
 //= require parallax
 //= require toastr
+//= require bpopup
+//= require jquery.elastic
 //= require_tree .

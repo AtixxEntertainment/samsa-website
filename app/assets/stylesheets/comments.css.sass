@@ -1,3 +1,37 @@
+.new-comment-form
+  display: none
+  width: 100%
+  text-align: center
+  background-color: rgb(28,21,12)
+  color: rgb(121,117,113)
+  padding: 1em 0
+  border-top: 1px solid rgb(123,118,112)
+  border-bottom: 1px solid rgb(123,118,112)
+  abbr
+    display: none
+  form
+    text-align: left
+    max-width: 800px
+    display: block
+    margin: auto
+    position: relative
+    textarea
+      background-color: white
+      border-radius: 0
+      height: 120px
+      &:focus
+        box-shadow: none
+        border: 1px solid #ccc
+    .submit-btn
+      position: absolute
+      right: -4px
+      bottom: -2px
+      background-color: transparent
+      border: 0
+      img
+        max-width: 33px
+        max-height: 33px
+
 #comentario_destacado
   .comment
     padding: 1em 0.5em
@@ -14,13 +48,6 @@
     text-align: left
   .comment_header a
     color: white
-  textarea
-    background-color: transparent
-    color: white
-    border: 0
-    padding: 0
-    &:focus
-      box-shadow: none
   .action-buttons a
     color: white
     &:hover

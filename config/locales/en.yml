@@ -36,3 +36,7 @@ en:
       submitting: Commenting...
     landing:
       message: "This game is free thanks to independent creators and their sponsors, download it and don't forget to support the project by liking our partners so we can continue to do this for free. From fans to fans. Thanks"
+  activerecord:
+    attributes:
+      comment:
+        body: "Comment"

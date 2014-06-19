@@ -236,6 +236,9 @@ es:
       body: "Se encontraron problemas con los siguientes campos:"
 
   activerecord:
+    attributes:
+      comment:
+        body: "Comentario"
     errors:
       messages:
         <<: *errors_messages

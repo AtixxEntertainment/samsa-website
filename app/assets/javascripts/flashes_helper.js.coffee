@@ -4,8 +4,7 @@ class FlashesHelper
       $flash = $(flash)
       toastr[$flash.data("type")] $flash.text()
 
-initializeFlashesHelper = ->
-  new FlashesHelper
+initializeFlashesHelper = -> new FlashesHelper
 
 jQuery initializeFlashesHelper
 $(document).on "page:load", initializeFlashesHelper

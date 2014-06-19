@@ -1,9 +1,11 @@
 = simple_form_for [post, comment], remote: true do |f|
-  .row.comment id="comentar"
-    .col-xs-1
-      = decorated_current_user.avatar
-    .col-xs-9
-      .comment_user_name = decorated_current_user.nombres
-      = f.input_field :body, placeholder: t("ui.comments.placeholder"), class: "form-control"
-    .col-xs-2
-      = f.submit t("ui.comments.submit"), class: "btn btn-default", data: { disable_with: t("ui.comments.submitting") }
+  #comentar
+    = f.label :body
+    | :
+    = f.input_field :body, placeholder: t("ui.comments.placeholder"), class: "form-control"
+    button.submit-btn type="submit" title="#{t("ui.comments.submit")}"
+      = image_tag "icon_up.png"
+    .hidden
+      = f.submit t("ui.comments.submit"),
+                 class: "btn btn-default",
+                 data: { disable_with: t("ui.comments.submitting") }
