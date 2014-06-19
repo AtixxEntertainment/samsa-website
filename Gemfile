@@ -107,3 +107,5 @@ gem "sucker_punch"
 
 # style emails
 gem "premailer-rails"
+
+gem "newrelic_rpm"
