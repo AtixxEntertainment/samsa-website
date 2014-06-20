@@ -1,0 +1,9 @@
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: samsa_website_test
+  pool: 5
+  username: postgres
+  port: 5432
+  host: localhost
+  min_messages: WARNING
