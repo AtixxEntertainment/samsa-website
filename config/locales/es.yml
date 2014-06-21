@@ -6,6 +6,9 @@ es:
     locale:
       es: Español
       en: English
+    sponsors:
+      like: Dale like aquí
+      message: Las empresas que participaron como sponsors aceptaron no intervenir en los procesos creativos del videojuego, permitiéndonos total libertad creativa (sí, wow)
     session:
       require_login: Debes autentificarte
       welcome: Puedes autentificarte con tu cuenta de twitter o facebook
@@ -14,7 +17,8 @@ es:
       submit: Comentar
       submitting: Comentando...
     landing:
-      message: "Este juego es gratuito gracias al esfuerzo de creadores independientes y sus patrocinadores, descárgatelo gratis pero no te olvides de apoyar el proyecto dándole un like a nuestros socios, así podremos seguir haciendo esto de manera gratuita, de fans para fans. Gracias."
+      message: Este juego es gratuito gracias al esfuerzo de creadores independientes y sus patrocinadores, descárgatelo gratis pero no te olvides de apoyar el proyecto dándole un like a nuestros socios, así podremos seguir haciendo esto de manera gratuita, de fans para fans. Gracias.
+      scripts: Los scripts que utilizamos los encontrarás aquí
 
 
   views:

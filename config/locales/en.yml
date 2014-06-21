@@ -27,6 +27,9 @@ en:
     locale:
       es: Español
       en: English
+    sponsors:
+      like: like here
+      message: Our sponsors accepted to not be part of the creative process of the game, giving us total creative freedom (yes, wow)
     session:
       require_login: You must login first
       welcome: You may login with your twitter or facebook account
@@ -36,7 +39,8 @@ en:
       submitting: Commenting...
     landing:
       message: "This game is free thanks to independent creators and their sponsors, download it and don't forget to support the project by liking our partners so we can continue to do this for free. From fans to fans. Thanks"
+      scripts: You can find here the scripts we used
   activerecord:
     attributes:
       comment:
-        body: "Comment"
+        body: Comment

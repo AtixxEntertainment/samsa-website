@@ -1,0 +1,46 @@
+@mixin bg-image
+  background-repeat: no-repeat
+  background-size: cover
+
+.sponsors
+  & > div
+    &:first-child
+      padding-right: 2px
+    &:last-child
+      padding-left: 2px
+  .sponsor
+    @include bg-image
+    text-align: center
+    background-image: url("/images/post_bg_sponsor.png")
+    color: white
+    padding: 0.8em 0.5em 0.8em 0.5em
+    font-size: 1.5em
+    // height: 264px
+    // display: inline-block
+    // padding: 3em 0
+    // margin: 0 0 1em 0
+    img
+      max-width: 100%
+    .like-sponsor-arrow
+      background-image: url("/images/sponsor_like.png")
+      background-size: cover
+      width: 30px
+      height: 70px
+      margin: 0.3em auto 1em auto
+    .sponsor-arcimego
+      display: inline-block
+      background-repeat: no-repeat
+      background-size: 100%
+    .sponsor-ile
+      @include bg-image
+      display: inline-block
+
+.sponsors-message
+  @include bg-image
+  background-image: url("/images/post_bg_sponsor.png")
+  color: white
+  padding: 1.5em 1em
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi)
+  .sponsor .like-sponsor-arrow
+    background-image: url("/images/sponsor_like@2x.png") !important

@@ -6,7 +6,13 @@
     .post_descarga
     .post_logo_atixx
   .col-xs-6
-    .post_bg_sponsor.align_center
-      .post_logo_arcimego
-    .post_bg_sponsor.align_center
-      .post_logo_ile
+    .row.sponsors
+      - sponsors.each do |sponsor|
+        .col-xs-6
+          .sponsor
+            = t("ui.sponsors.like")
+            .like-sponsor-arrow
+            = image_tag "/images/logo_#{sponsor}.png", class: "sponsor-#{sponsor}"
+    .sponsors-message = t("ui.sponsors.message")
+    .game-scripts
+      = t("ui.landing.scripts")

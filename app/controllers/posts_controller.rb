@@ -9,6 +9,9 @@ class PostsController < ApplicationController
     body = session.to_hash.fetch("attempt_comment", {}).fetch(:body, nil)
     Comment.new body: body
   }
+  expose(:sponsors) {
+    ["ile", "arcimego"]
+  }
 
   def index
     self.post = Post.landing
