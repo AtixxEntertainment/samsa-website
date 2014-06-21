@@ -8,7 +8,7 @@ class HeaderCharacterDecorator < ApplicationDecorator
   end
 
   def imagen_url
-    "/images/header_#{nombre}.png"
+    "/images/header_characters/header_#{nombre}.png"
   end
 
   def avatar_styles

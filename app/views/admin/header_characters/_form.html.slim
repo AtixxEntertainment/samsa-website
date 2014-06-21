@@ -8,10 +8,10 @@ h1 = "#{header_character.new_record? ? "Nuevo" : "Editar"} personaje"
       ul
         li
           code
-            | /images/header_[nombre].png
+            | /images/header_characters/header_[nombre].png
         li
           code
-            | /images/header_[nombre]@2x.png
+            | /images/header_characters/header_[nombre]@2x.png
   .form-group = f.input :profundidad, input_html: { class: "form-control" }
   .form-group
     = f.input :posicion_horizontal, label: "Margen Horizontal", as: :range, input_html: { max: 100 }
