@@ -11,7 +11,7 @@ h1 = "#{post.new_record? ? "Nueva" : "Editar"} entrada"
       = link_to "Vista previa", "#", id: "post-preview-button", class: "btn btn-default btn-sm margin-vertical-small"
   .form-group
     = f.input :published, label: "Publicada"
-    = f.input :navbar
+    / = f.input :navbar
   .actions
     - unless post.new_record?
       = link_to "Eliminar", admin_post_path(post), class: "btn btn-link", method: :delete, data: { confirm: "¿Estás seguro? Esta acción es irreversible"}

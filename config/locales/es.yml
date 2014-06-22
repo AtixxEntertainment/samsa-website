@@ -3,6 +3,9 @@ es:
     login: Autentificarse
     logout: Cerrar sesión
     admin: Administración
+    download: Descarga
+    news: Noticias
+    products: Otros productos
     comment: Comenta
     locale:
       es: Español

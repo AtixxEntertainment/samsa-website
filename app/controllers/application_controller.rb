@@ -12,7 +12,13 @@ class ApplicationController < ActionController::Base
     strategy DecentExposure::StrongParametersStrategy
   end
 
-  expose(:posts_in_navbar) { Post.in_navbar }
+  expose(:posts_in_navbar) {
+    { download: root_path,
+      news:     root_path,
+      products: root_path,
+      comment:  "#" }
+  }
+
   expose_decorated(:all_header_characters,
                    decorator: Draper::CollectionDecorator) {
     HeaderCharacter.all

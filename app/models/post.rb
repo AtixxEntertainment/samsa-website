@@ -18,7 +18,6 @@ class Post < ActiveRecord::Base
   extend FriendlyId
 
 # scopes
-  scope :in_navbar, -> { where(navbar: true) }
   scope :only_link, -> { select(:id, :title, :slug) }
 
 # friendly id

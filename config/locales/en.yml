@@ -24,6 +24,9 @@ en:
     login: Login
     logout: Logout
     admin: Admin
+    download: Download
+    news: News
+    products: Other products
     comment: Comment
     locale:
       es: Español

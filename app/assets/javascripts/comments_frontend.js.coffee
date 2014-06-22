@@ -1,5 +1,5 @@
 # open comment's form in a popup
-$(document).on "click", ".comment-btn", ->
+$(document).on "click", "#main_navbar .comment-btn", ->
   $(".new-comment-form").bPopup
     speed: 400,
     transition: "slideDown",

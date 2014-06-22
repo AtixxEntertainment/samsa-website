@@ -1,8 +1,6 @@
 class PostDecorator < ApplicationDecorator
   def status
-    h.content_tag :div, class: "block" do
-      published_status + navbar_status
-    end
+    published_status
   end
 
   def title_with_admin_link
