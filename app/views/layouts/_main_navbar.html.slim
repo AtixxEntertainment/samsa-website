@@ -5,4 +5,4 @@
       - link = post.landing? ? root_path : post_path(post)
       = link_to_unless_current post.title, link
   .navbar-item style="width: #{width}%;"
-    = link_to_unless_current "Comenta", "#", class: "comment-btn"
+    = link_to_unless_current t("ui.comment"), "#", class: "comment-btn"

@@ -3,6 +3,7 @@ es:
     login: Autentificarse
     logout: Cerrar sesión
     admin: Administración
+    comment: Comenta
     locale:
       es: Español
       en: English

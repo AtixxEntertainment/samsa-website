@@ -24,6 +24,7 @@ en:
     login: Login
     logout: Logout
     admin: Admin
+    comment: Comment
     locale:
       es: Español
       en: English
