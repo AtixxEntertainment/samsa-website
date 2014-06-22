@@ -1,13 +1,17 @@
-.comment .comment_header
-  & > div
+.comment
+  .comment_header
+    & > div
+      display: inline-block
+    .user_name
+      font-weight: 600
+    .date
+      display: none
+      margin-left: 10px
+      font-weight: 300
+      font-size: 89%
+      cursor: pointer
+  &:hover .date
     display: inline-block
-  .user_name
-    font-weight: 600
-  .date
-    margin-left: 10px
-    font-weight: 300
-    font-size: 89%
-    cursor: pointer
 
 .vote_buttons
   text-align: right
