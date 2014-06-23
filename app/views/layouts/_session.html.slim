@@ -1,7 +1,5 @@
 #session-status
-  #locale
-    = link_to_locale "es"
-    = link_to_locale "en"
+  = render "shared/locale"
   - if current_user
     span = decorated_current_user.avatar
     span = decorated_current_user.nombres

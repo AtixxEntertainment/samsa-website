@@ -13,10 +13,10 @@ class ApplicationController < ActionController::Base
   end
 
   expose(:posts_in_navbar) {
-    { download: root_path,
-      news:     root_path,
+    { download:       root_path,
+      news:           root_path,
       other_products: products_path,
-      comment:  "#" }
+      comment:        "#" }
   }
 
   expose_decorated(:all_header_characters,

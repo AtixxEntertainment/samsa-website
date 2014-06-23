@@ -9,7 +9,8 @@
 #
 
 class Product < ActiveRecord::Base
-  translates :title, :kind, :producer, :summary
+  translates :title, :kind, :producer, :summary,
+             fallbacks_for_empty_translations: true
 
   mount_uploader :image, ProductImageUploader
 
