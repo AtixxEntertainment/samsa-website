@@ -37,8 +37,6 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
-gem "airbrake"
-
 # Use unicorn as the app server
 gem "unicorn"
 
@@ -49,29 +47,31 @@ gem "unicorn"
 # gem 'debugger', group: [:development, :test]
 
 gem "dotenv-rails"
-
-gem "slim"
+gem "slim" # templates
 gem "kaminari"
+gem "github-markdown"
+gem "friendly_id", "~> 5.0.0"
+gem "sucker_punch" # backgrounding
+gem "premailer-rails" # style emails
+gem "newrelic_rpm"
+gem "globalize" # AR models translations
+gem "simple_form"
+gem "carrierwave" # uploads
+gem "airbrake" # error reporting
 
+# authentication
 gem "omniauth-facebook"
 gem "omniauth-twitter"
 
-# annotate models
 gem "annotate", :git => "git://github.com/ctran/annotate_models.git"
-
-# uploads
-gem "carrierwave"
-
-# simple forms
-gem "simple_form"
 
 # decorators
 gem "draper"
 gem "decent_exposure", "~>2.3.0"
 gem "decent_decoration"
 
-# github markdown
-gem "github-markdown"
+# active record reputation system
+gem "activerecord-reputation-system", github: "NARKOZ/activerecord-reputation-system", branch: "rails4"
 
 group :test, :development do
   gem "factory_girl_rails"
@@ -95,17 +95,3 @@ end
 group :production do
   gem "rails_12factor"
 end
-
-# active record reputation system
-gem "activerecord-reputation-system", github: "NARKOZ/activerecord-reputation-system", branch: "rails4"
-
-# friendly id
-gem "friendly_id", "~> 5.0.0"
-
-# backgrounding
-gem "sucker_punch"
-
-# style emails
-gem "premailer-rails"
-
-gem "newrelic_rpm"

@@ -108,6 +108,9 @@ GEM
     friendly_id (5.0.3)
       activerecord (>= 4.0.0)
     github-markdown (0.6.4)
+    globalize (4.0.1)
+      activemodel (>= 4.0.0, < 5)
+      activerecord (>= 4.0.0, < 5)
     guard (2.4.0)
       formatador (>= 0.2.4)
       listen (~> 2.1)
@@ -310,6 +313,7 @@ DEPENDENCIES
   factory_girl_rails
   friendly_id (~> 5.0.0)
   github-markdown
+  globalize
   guard-rspec
   jbuilder (~> 1.2)
   jquery-rails
