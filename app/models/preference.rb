@@ -43,7 +43,7 @@ class Preference < ActiveRecord::Base
 
 # class methods
   cattr_accessor :preferences
-  self.preferences = [:landing_page, :subscribers]
+  self.preferences = [:subscribers]
 
   self.preferences.each do |preference|
     self.class.instance_eval do

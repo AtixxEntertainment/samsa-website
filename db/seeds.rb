@@ -22,13 +22,9 @@ Rails.logger.debug "Creating default header characters.."
   HeaderCharacter.create character
 end
 
-Rails.logger.debug "Creating default preferences.."
-[{name: "landing_page", value: 1},
- {name: "subscribers", value: 1}].each do |preference|
+Rails.logger.debug "Default preferences.."
+[{name: "subscribers", value: 1}].each do |preference|
   Preference.create preference
 end
 
-unless Post.exists?(title: "Inicio")
-  Rails.logger.debug "Creating Inicio page"
-  Post.create published: true, user_id: 1, title: "Inicio", body: ""
 end

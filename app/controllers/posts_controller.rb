@@ -14,11 +14,6 @@ class PostsController < ApplicationController
   }
 
   def index
-    self.post = Post.landing
-  end
-
-  def show
-    redirect_to root_path if post.landing?
   end
 
   def like
