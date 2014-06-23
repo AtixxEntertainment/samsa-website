@@ -1,0 +1,14 @@
+.product
+  h1 = product.title
+  .pull-right
+    = link_to "", edit_admin_product_path(product), class: "btn btn-default glyphicon glyphicon-edit"
+  = product.image
+  .field
+    span.label Producto:
+    = product.kind
+  .field
+    span.label Productor:
+    = product.producer
+  .field
+    span.label Resumen:
+    = product.summary

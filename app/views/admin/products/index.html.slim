@@ -1,0 +1,9 @@
+h1 Productos
+
+.pull-right
+  = link_to "", new_admin_product_path, class: "btn btn-default glyphicon glyphicon-plus"
+
+- if products.any?
+  = render products
+- else
+  h3 No hay productos

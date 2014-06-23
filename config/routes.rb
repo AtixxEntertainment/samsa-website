@@ -8,6 +8,7 @@ SamsaWebsite::Application.routes.draw do
 
   get :admin, to: "admin#index", constraints: AdminConstraint.new
 
+  resources :products
   resources :posts, only: :show do
     member do
       get :random_comment
@@ -23,6 +24,7 @@ SamsaWebsite::Application.routes.draw do
     resources :preferences
     resources :media
     resources :header_characters
+    resources :products
     resources :posts do
       collection do
         post :preview

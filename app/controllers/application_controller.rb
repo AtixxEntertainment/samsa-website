@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   expose(:posts_in_navbar) {
     { download: root_path,
       news:     root_path,
-      products: root_path,
+      other_products: products_path,
       comment:  "#" }
   }
 

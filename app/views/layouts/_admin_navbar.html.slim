@@ -1,9 +1,10 @@
 nav.navbar.navbar-default
   .navbar-header
-  = link_to "Administración", admin_path, class: "navbar-brand"
+  = link_to "Admin", admin_path, class: "navbar-brand"
   .collapse.navbar-collapse
     ul.nav.navbar-nav
       = navbar_item "Entradas", admin_posts_path
+      = navbar_item "Productos", admin_products_path
       = navbar_item "Multimedia", admin_media_path
       = navbar_item "Usuarios", admin_users_path
       = navbar_item "Preferencias", admin_preferences_path

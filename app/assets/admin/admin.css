@@ -7,5 +7,6 @@
   *= require header_characters
   *= require common
   *= require comments_common
+  *= require products
   *= require_tree .
 */

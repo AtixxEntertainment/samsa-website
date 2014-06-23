@@ -8,4 +8,11 @@ module ApplicationHelper
   def current_locale_is?(locale)
     current_locale == locale
   end
+
+  def gfm_and_html_support
+    content_tag :span, class: "light" do
+      link_to("Github flavored markdown", "https://help.github.com/articles/github-flavored-markdown", target: "_blank") +
+      " y HTML"
+    end
+  end
 end

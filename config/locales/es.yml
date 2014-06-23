@@ -5,7 +5,7 @@ es:
     admin: Administración
     download: Descarga
     news: Noticias
-    products: Otros productos
+    other_products: Otros productos
     comment: Comenta
     locale:
       es: Español
@@ -16,6 +16,10 @@ es:
     session:
       require_login: Debes autentificarte
       welcome: Puedes autentificarte con tu cuenta de twitter o facebook
+    products:
+      product: Producto
+      producer: Productor
+      summary: Resumen
     comments:
       placeholder: Escribe tu comentario...
       submit: Comentar

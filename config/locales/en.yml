@@ -26,7 +26,7 @@ en:
     admin: Admin
     download: Download
     news: News
-    products: Other products
+    other_products: Other products
     comment: Comment
     locale:
       es: Español
@@ -37,6 +37,10 @@ en:
     session:
       require_login: You must login first
       welcome: You may login with your twitter or facebook account
+    products:
+      product: Product
+      producer: Producer
+      summary: Summary
     comments:
       placeholder: Write your comment...
       submit: Comment
