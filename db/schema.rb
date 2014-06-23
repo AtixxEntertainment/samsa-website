@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140313155643) do
+ActiveRecord::Schema.define(version: 20140622233205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,26 @@ ActiveRecord::Schema.define(version: 20140313155643) do
   end
 
   add_index "preferences", ["name"], name: "index_preferences_on_name", unique: true, using: :btree
+
+  create_table "product_translations", force: true do |t|
+    t.integer  "product_id", null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.string   "kind"
+    t.string   "producer"
+    t.text     "summary"
+  end
+
+  add_index "product_translations", ["locale"], name: "index_product_translations_on_locale", using: :btree
+  add_index "product_translations", ["product_id"], name: "index_product_translations_on_product_id", using: :btree
+
+  create_table "products", force: true do |t|
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "profiles", force: true do |t|
     t.integer  "user_id",      null: false
