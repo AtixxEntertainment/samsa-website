@@ -12,14 +12,4 @@ describe "layouts/_main_navbar" do
       rendered.should have_content("#{post.title}")
     end
   end
-
-  it "should render a link to root path when post is landing" do
-    post = FactoryGirl.create :post, :navbar
-    Post.any_instance.stub(:landing?).and_return(true)
-
-    render
-
-    selector = "a[href='/']"
-    rendered.should have_selector(:css, selector)
-  end
 end

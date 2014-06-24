@@ -62,6 +62,14 @@ ActiveRecord::Schema.define(version: 20140622233205) do
     t.datetime "updated_at"
   end
 
+  create_table "pages", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pages", ["title"], name: "index_pages_on_title", using: :btree
+
   create_table "posts", force: true do |t|
     t.string   "title",                      null: false
     t.text     "body",                       null: false

@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Rails.logger.debug "Creating default header characters.."
+Rails.logger.debug "Default header characters.."
 [ {nombre: "titulo", profundidad: -3, posicion_horizontal: 66, posicion_vertical: -6},
   {nombre: "gimb", profundidad: 5, posicion_horizontal: 7, posicion_vertical: -73},
   {nombre: "camila", profundidad: 4, posicion_horizontal: 15, posicion_vertical: -42},
@@ -27,4 +27,7 @@ Rails.logger.debug "Default preferences.."
   Preference.create preference
 end
 
+Rails.logger.debug "Default pages"
+["Descarga", "Otros productos"].each do |title|
+  Page.create title: title
 end
