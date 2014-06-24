@@ -13,6 +13,11 @@ class PagesController < ApplicationController
   end
 
   def show
-    redirect_to root_path if page == Page.descarga
+    if page == Page.otros_productos
+      redirect_to products_path
+    else
+      # if page == Page.descarga
+      redirect_to root_path
+    end
   end
 end
