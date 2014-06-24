@@ -5,7 +5,11 @@ link rel="stylesheet" href="presets.css"
   p Hola,
   p
     | Te escribimos para notificarte que hay un nuevo comentario en&nbsp;
-    = link_to @post, post_url(@post)
+    = link_to @commentable,
+              url_for(controller: @comment.commentable_type.downcase.pluralize,
+                      action: :show,
+                      id: @commentable.id,
+                      only_path: false)
 
   .row.well
     .col-xs-3.align_center
@@ -21,4 +25,3 @@ link rel="stylesheet" href="presets.css"
   p
     | Recibiste este correo porque estás dentro de la lista de suscriptores de&nbsp;
     = root_url
-

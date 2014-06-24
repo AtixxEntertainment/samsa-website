@@ -6,10 +6,9 @@ SamsaWebsite::Application.routes.draw do
   get "login", to: "sessions#index", as: :login
   get "logout", to: "sessions#destroy", as: :logout
 
-  get :admin, to: "admin#index", constraints: AdminConstraint.new
+  resources :products, only: :index
 
-  resources :products
-  resources :posts, only: :show do
+  concern :commentable do
     member do
       get :random_comment
     end
@@ -20,6 +19,14 @@ SamsaWebsite::Application.routes.draw do
     end
   end
 
+  resources :pages, only: [:index, :show] do
+    concerns :commentable
+  end
+  resources :posts, only: :show do
+    concerns :commentable
+  end
+
+  get :admin, to: "admin#index", constraints: AdminConstraint.new
   namespace :admin do
     resources :preferences
     resources :media
@@ -43,7 +50,7 @@ SamsaWebsite::Application.routes.draw do
     end
   end
 
-  root "posts#index"
+  root "pages#index"
 
   get "/:id", to: "posts#show"
 end

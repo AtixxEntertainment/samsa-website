@@ -1,4 +1,4 @@
-= simple_form_for [post, comment], remote: true do |f|
+= simple_form_for [comment.commentable, comment], remote: true do |f|
   #comentar
     = f.label :body
     | :

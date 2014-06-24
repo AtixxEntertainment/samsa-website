@@ -16,6 +16,7 @@ class Comment < ActiveRecord::Base
 # relationships
   belongs_to :user
   belongs_to :post
+  belongs_to :commentable, polymorphic: true
 
 # scopes
   scope :visible, -> { where(visible: true) }
@@ -24,7 +25,7 @@ class Comment < ActiveRecord::Base
   scope :with_user, -> { includes(user: :profile) }
 
 # validations
-  validates :user_id, :post_id, :body, presence: true
+  validates :user_id, :commentable_id, :commentable_type, :body, presence: true
   validate :validate_user_allowed_to_comment
 
 # reputation

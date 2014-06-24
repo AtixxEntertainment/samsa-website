@@ -1,0 +1,8 @@
+h1 Mi perfil
+= simple_form_for [:admin, user] do |f|
+  .form-group
+    = f.input :nombres, input_html: { class: "form-control" }
+  .form-group
+    = f.input :email, input_html: { class: "form-control" }
+  .actions
+    = f.submit "Enviar", class: "btn btn-primary", data: { disable_with: "Enviando" }

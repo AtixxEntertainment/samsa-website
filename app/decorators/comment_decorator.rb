@@ -42,9 +42,15 @@ class CommentDecorator < ApplicationDecorator
 
   def vote_button(value)
     h.link_to h.image_tag("/images/icon_#{value}.png"),
-      h.vote_post_comment_path(object.post_id, object, value: value),
+      vote_link(value),
       method: :post,
       remote: true,
       class: "comment-vote vote-#{value}"
+  end
+
+  def vote_link(value)
+    commentable = object.commentable_type.downcase
+    method_name = "vote_#{commentable}_comment_path"
+    h.send method_name, object.commentable_id, object, value: value
   end
 end

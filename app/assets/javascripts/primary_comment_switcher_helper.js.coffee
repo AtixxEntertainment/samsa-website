@@ -11,7 +11,9 @@ window.helpers.primaryCommentSwitcherHelper =
 
   scheduleCommentChange: ->
     @timeoutId = setTimeout =>
-      $.getScript "/posts/#{@$node.data("post_id")}/random_comment"
+      id = @$node.data("commentable_id")
+      type = @$node.data("commentable_type")
+      $.getScript "/#{type}/#{id}/random_comment"
       @scheduleCommentChange()
     , 10000 # 10 seconds
 

@@ -2,13 +2,19 @@ class CommentsController < ApplicationController
   before_filter :comments_require_login, only: :create
   before_filter :require_login, only: :vote
 
-  expose(:post) { Post.find params[:post_id] }
   expose :comment, attributes: :comment_params
+  expose(:commentable) {
+    if params[:page_id].present?
+      Page.find params[:page_id]
+    else
+      Post.find params[:post_id]
+    end
+  }
 
   def create
     session[:attempt_comment] = nil
     comment.user = current_user
-    comment.post = post
+    comment.commentable = commentable
     respond_to do |format|
       if comment.save
         CommentCreatedJob.new.async.perform comment.id
@@ -41,11 +47,13 @@ class CommentsController < ApplicationController
 
   def comments_require_login
     unless current_user
-      session[:attempt_comment] = { body: comment_params[:body], post_id: params[:post_id] }
-      flash[:warning] = I18n.t("ui.session.require_login")
+      session[:attempt_comment] = { body: comment_params[:body] }
       respond_to do |format|
-        format.html { redirect_to login_path }
         format.js { render "layouts/require_login" }
+        format.html {
+          flash[:warning] = I18n.t("ui.session.require_login")
+          redirect_to login_path
+        }
       end
       false
     end

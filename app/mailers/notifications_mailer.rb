@@ -3,8 +3,8 @@ class NotificationsMailer < ActionMailer::Base
 
   def new_comment(comment)
     @comment = comment
-    @post = comment.post
+    @commentable = comment.commentable
     recipients = Preference.subscribers_emails
-    mail(subject: "Nuevo comentario en #{@post}", to: recipients)
+    mail(subject: "Nuevo comentario en #{@commentable}", to: recipients)
   end
 end

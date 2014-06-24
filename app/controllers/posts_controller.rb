@@ -1,20 +1,9 @@
 class PostsController < ApplicationController
-  expose_decorated :post
-  expose_decorated(:comments) {
-    scope = post.comments.with_user.by_votes
-    scope = scope.visible unless current_user.try(:admin?)
-    scope
-  }
-  expose(:comment) {
-    body = session.to_hash.fetch("attempt_comment", {}).fetch(:body, nil)
-    Comment.new body: body
-  }
-  expose(:sponsors) {
-    ["ile", "arcimego"]
-  }
+  include Commentable
 
-  def index
-  end
+  expose_decorated :post
+
+  alias_method :commentable, :post
 
   def like
     vote! 1
@@ -22,10 +11,6 @@ class PostsController < ApplicationController
 
   def dislike
     vote! -1
-  end
-
-  def random_comment
-    self.comments = post.comments.random.decorate
   end
 
   private
