@@ -1,0 +1,4 @@
+h1 = page.title
+= pluralize page.comments.count, "comentario"
+- comments.each do |comment|
+  = render "comments/comment", comment: comment.decorate

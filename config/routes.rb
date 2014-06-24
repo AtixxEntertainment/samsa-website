@@ -28,6 +28,7 @@ SamsaWebsite::Application.routes.draw do
 
   get :admin, to: "admin#index", constraints: AdminConstraint.new
   namespace :admin do
+    resources :pages, only: [:index, :show]
     resources :preferences
     resources :media
     resources :header_characters
