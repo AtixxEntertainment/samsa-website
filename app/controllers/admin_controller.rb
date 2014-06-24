@@ -4,15 +4,11 @@ class AdminController < ApplicationController
   layout "admin"
 
   expose(:latest_comments) {
-    Comment.recent.with_user.limit(10).inject({}) do |hash, comment|
-      hash.tap do |hash|
-        hash[comment.post_id] ||= []
-        hash[comment.post_id] << comment
-      end
-    end
-  }
-  expose(:latest_post_comments) {
-    Post.where(id: latest_comments.keys).only_link.decorate
+    Comment.recent
+    .includes(:commentable)
+    .with_user
+    .limit(10)
+    .group_by &:commentable
   }
 
   def index
