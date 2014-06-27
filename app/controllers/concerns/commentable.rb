@@ -2,6 +2,8 @@ module Commentable
   extend ActiveSupport::Concern
 
   included do
+    helper_method :commentable
+
     expose(:comment) {
       body = session.to_hash.fetch("attempt_comment", {}).fetch(:body, nil)
       Comment.new body: body, commentable: commentable
@@ -11,10 +13,12 @@ module Commentable
       scope = scope.visible unless current_user.try(:admin?)
       scope
     }
+    expose(:highlight_comment) {
+      commentable.comments.random.first.decorate if commentable.comments.count > 3
+    }
   end
 
   def random_comment
-    self.comments = commentable.comments.random.decorate
     render "comments/random_comment"
   end
 end
