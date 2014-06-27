@@ -54,3 +54,6 @@ en:
     attributes:
       comment:
         body: Comment
+  time:
+    formats:
+      posted_at: "%d %b %Y"

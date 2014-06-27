@@ -1,2 +1,8 @@
-.show_post_body = post.body
+.show_post_body
+  h2 = post.title
+  = post.body
+  .light
+    => post.user
+    ' -
+    = l post.created_at, format: :posted_at
 = render "comments/highlight_comment"

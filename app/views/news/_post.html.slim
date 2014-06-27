@@ -1,3 +1,4 @@
 .bg_mensaje_tokiro.post-resume
-  h3 = post.title
+  h3 = link_to post.title, post_path(post)
+  .light.small = l post.created_at, format: :posted_at
   = truncate(post.body, length: 400, escape: false) { link_to t("ui.read_more"), post_path(post), class: "read-more" }

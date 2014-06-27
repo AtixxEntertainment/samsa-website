@@ -33,4 +33,8 @@ class User < ActiveRecord::Base
   def voted_for?(comment)
     evaluations.where(target_type: comment.class, target_id: comment.id).present?
   end
+
+  def to_s
+    nombres
+  end
 end
