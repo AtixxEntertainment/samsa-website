@@ -1,0 +1,3 @@
+.bg_mensaje_tokiro.post-resume
+  h3 = post.title
+  = truncate(post.body, length: 400, escape: false) { link_to t("ui.read_more"), post_path(post), class: "read-more" }

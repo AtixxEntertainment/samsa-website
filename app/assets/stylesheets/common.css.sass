@@ -2,13 +2,19 @@
   background-repeat: no-repeat
   background-size: cover
 
-.show_post_body
-  padding: 1em 0
-  margin: 0 2em
-  text-align: left
-.bg_mensaje_tokiro
+@mixin white-background
   @include bg-image
   background-image: url("/images/BG_mensaje_tokiro.png")
+
+.show_post_body
+  @include white-background
+  padding: 1em
+  margin: 0 1em
+  text-align: left
+  img
+    max-width: 100%
+.bg_mensaje_tokiro
+  @include white-background
   padding: 3em 2em 1em 2em
 .bg_mensaje_tokiro_xs
   @include bg-image

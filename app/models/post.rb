@@ -19,6 +19,8 @@ class Post < ActiveRecord::Base
 
 # scopes
   scope :only_link, -> { select(:id, :title, :slug) }
+  scope :published, -> { where(published: true) }
+  scope :recent,    -> { order(id: :desc) }
 
 # friendly id
   friendly_id :title, use: :slugged

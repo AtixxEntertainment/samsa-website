@@ -1,13 +1,20 @@
 # open comment's form in a popup
 $(document).on "click", "#main_navbar .comment-btn", ->
-  $(".new-comment-form").bPopup
-    speed: 400,
-    transition: "slideDown",
-    positionStyle: "fixed",
-    onOpen: ->
-      $(".comment-btn").addClass "active"
-    onClose: ->
-      $(".comment-btn").removeClass "active"
+  $form = $(".new-comment-form")
+  if $form.length is 0
+    # there is no form. comment on home page
+    $(".download-btn")[0].click()
+    $(document).one "page:load", ->
+      $(".comment-btn").trigger "click"
+  else
+    $form.bPopup
+      speed: 400,
+      transition: "slideDown",
+      positionStyle: "fixed",
+      onOpen: ->
+        $(".comment-btn").addClass "active"
+      onClose: ->
+        $(".comment-btn").removeClass "active"
   false
 
 # apply elastic to comment form

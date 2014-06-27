@@ -7,6 +7,7 @@ SamsaWebsite::Application.routes.draw do
   get "logout", to: "sessions#destroy", as: :logout
 
   resources :products, only: :index
+  resources :news, only: :index
 
   concern :commentable do
     member do
@@ -19,7 +20,7 @@ SamsaWebsite::Application.routes.draw do
     end
   end
 
-  resources :pages, only: [:index, :show] do
+  resources :pages, only: :show do
     concerns :commentable
   end
   resources :posts, only: :show do
