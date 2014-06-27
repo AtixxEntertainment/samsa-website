@@ -1,5 +1,6 @@
 - width = 100.0 / posts_in_navbar.count
-#main_navbar
-  - posts_in_navbar.each do |key, path|
-    .navbar-item style="width: #{width}%;"
-      = link_to_unless_current t("ui.#{key}"), path, class: "#{key}-btn"
+#main_navbar_wrapper
+  #main_navbar
+    - posts_in_navbar.each do |key, path|
+      .navbar-item style="width: #{width}%;"
+        = link_to_unless_current t("ui.#{key}"), path, class: "#{key}-btn"
