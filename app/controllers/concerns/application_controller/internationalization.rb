@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 
     def current_locale
       session[:current_locale] or
-      request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
+      request.env['HTTP_ACCEPT_LANGUAGE'].to_s.scan(/^[a-z]{2}/).first
     end
   end
 end
