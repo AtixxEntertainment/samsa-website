@@ -23,7 +23,7 @@ SamsaWebsite::Application.routes.draw do
   resources :pages, only: :show do
     concerns :commentable
   end
-  resources :posts, only: :show do
+  resources :posts, path: :news, only: :show do
     concerns :commentable
   end
 
