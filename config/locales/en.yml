@@ -54,6 +54,12 @@ en:
     attributes:
       comment:
         body: Comment
+      product:
+        title: Title
+        image: Image
+        kind: Product
+        producer: Producer
+        summary: Summary
   time:
     formats:
       posted_at: "%d %b %Y"
