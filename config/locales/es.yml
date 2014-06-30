@@ -252,7 +252,13 @@ es:
   activerecord:
     attributes:
       comment:
-        body: "Comentario"
+        body: Comentario
+      product:
+        title: Título
+        image: Imagen
+        kind: Producto
+        producer: Productor
+        summary: Resumen
     errors:
       messages:
         <<: *errors_messages
