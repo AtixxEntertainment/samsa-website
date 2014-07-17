@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -63,8 +63,6 @@ gem "airbrake" # error reporting
 gem "omniauth-facebook"
 gem "omniauth-twitter"
 
-gem "annotate", :git => "git://github.com/ctran/annotate_models.git"
-
 # decorators
 gem "draper"
 gem "decent_exposure", "~>2.3.0"
@@ -79,6 +77,7 @@ group :test, :development do
   gem "guard-rspec"
   gem "terminal-notifier-guard"
   gem "rspec-rails"
+  gem "annotate", :git => "git://github.com/ctran/annotate_models.git"
 end
 
 group :development do
