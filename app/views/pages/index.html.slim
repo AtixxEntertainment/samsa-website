@@ -15,7 +15,7 @@
             .like-sponsor-arrow
             = image_tag "/images/logo_#{sponsor}.png", class: "sponsor-#{sponsor}"
     .sponsors-message = t("ui.sponsors.message")
-    .game-scripts
+    .game-scripts.hidden
       = t("ui.landing.scripts")
 
 = render "comments/highlight_comment"
