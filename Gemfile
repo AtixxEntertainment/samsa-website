@@ -74,6 +74,9 @@ gem "activerecord-reputation-system", github: "NARKOZ/activerecord-reputation-sy
 # for mobile device detection
 gem "mobile-fu"
 
+# Procfile
+gem "foreman"
+
 group :test, :development do
   gem "factory_girl_rails"
   gem "capybara"
