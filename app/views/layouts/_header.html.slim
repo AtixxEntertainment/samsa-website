@@ -1,2 +1,6 @@
-- all_header_characters.each do |character|
-  = character.parallax_avatar
+- if is_mobile_device?
+  = image_tag "/header_static_small.png", id: "header-sm-img"
+- else
+  #header.parallax-scene
+    - all_header_characters.each do |character|
+      = character.parallax_avatar

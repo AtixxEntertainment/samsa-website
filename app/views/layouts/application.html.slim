@@ -10,13 +10,12 @@ html
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
-  body
+  body class="#{"mobile" if is_mobile_device?}"
     = render "layouts/flashes"
     = render "layouts/session"
     #header-wrapper
       .header-border.top
-      #header.parallax-scene
-        = render "layouts/header"
+      = render "layouts/header"
       .header-border.bottom
     #main-wrapper
       #main

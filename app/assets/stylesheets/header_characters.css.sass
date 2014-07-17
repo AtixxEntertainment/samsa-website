@@ -1,3 +1,6 @@
+#header-sm-img
+  max-width: 100%
+
 #header-wrapper
   position: relative
   padding: 5px 0
@@ -25,6 +28,12 @@
     top: 0
   &.bottom
     bottom: 0
+
+body.mobile
+  .header-border
+    height: 8px
+    &.top
+      top: 4px
 
 @media (max-width: 768px)
   #header

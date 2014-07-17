@@ -71,6 +71,9 @@ gem "decent_decoration"
 # active record reputation system
 gem "activerecord-reputation-system", github: "NARKOZ/activerecord-reputation-system", branch: "rails4"
 
+# for mobile device detection
+gem "mobile-fu"
+
 group :test, :development do
   gem "factory_girl_rails"
   gem "capybara"
