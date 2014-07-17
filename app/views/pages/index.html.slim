@@ -8,9 +8,9 @@
       .post_logo_atixx
   .col-sm-6.col-xs-12
     .row.sponsors
-      - sponsors.each do |sponsor|
+      - sponsors.each do |sponsor, link|
         .col-xs-6
-          .sponsor
+          a.sponsor href="#{link}"
             = t("ui.sponsors.like")
             .like-sponsor-arrow
             = image_tag "/images/logo_#{sponsor}.png", class: "sponsor-#{sponsor}"

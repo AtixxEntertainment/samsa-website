@@ -1,10 +1,13 @@
 class PagesController < ApplicationController
   include Commentable
 
+  SPONSORS = {
+    "ile" => "https://www.facebook.com/ILEEcuador",
+    "arcimego" => "https://www.facebook.com/arcimego.ca"
+  }.freeze
+
   expose :page
-  expose(:sponsors) {
-    ["ile", "arcimego"]
-  }
+  expose(:sponsors) { SPONSORS }
 
   alias_method :commentable, :page
 
