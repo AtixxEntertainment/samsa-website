@@ -22,7 +22,5 @@ module SamsaWebsite
     config.i18n.fallbacks = true
 
     config.action_mailer.default_url_options = { host: ENV["APP_URL"] }
-
-    config.secret_key_base = ENV["SECRET_TOKEN"]
   end
 end
