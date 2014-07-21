@@ -58,11 +58,6 @@ class UserDecorator < ApplicationDecorator
   end
 
   def social_profile
-    if object.profile.provider == "twitter"
-      link_path = "http://twitter.com/" + object.profile.nickname
-    else
-      link_path = "http://facebook.com/" + object.profile.nickname
-    end
-    h.link_to object.profile.provider.capitalize, link_path, class: "label label-success", target: "_blank"
+    h.link_to object.profile.provider.capitalize, profile_url, class: "label label-success", target: "_blank"
   end
 end
