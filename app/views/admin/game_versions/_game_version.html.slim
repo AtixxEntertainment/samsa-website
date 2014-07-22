@@ -3,3 +3,5 @@
   a href="#{game_version.url}" = game_version.url
   div = game_version.changelog
   = link_to "", edit_admin_game_version_path(game_version), class: "glyphicon glyphicon-edit"
+  - if game_version.hidden
+    span.label.label-default oculto
