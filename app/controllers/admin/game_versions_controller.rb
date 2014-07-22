@@ -22,7 +22,7 @@ module Admin
     private
 
     def game_version_params
-      params.require(:game_version).permit :tag, :changelog, :url
+      params.require(:game_version).permit :tag, :changelog, :url, :hidden
     end
 
     def set_active

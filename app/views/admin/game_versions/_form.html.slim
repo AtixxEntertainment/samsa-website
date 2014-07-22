@@ -7,6 +7,8 @@ h1 = "#{game_version.new_record? ? "Nueva" : "Editar"} versión"
     = f.input :url, input_html: { class: "form-control" }
   .form-group
     = f.input :changelog, input_html: { class: "form-control" }
+  .form-group
+    = f.input :hidden, label: "Oculto"
   .actions
     - unless game_version.new_record?
       = link_to "Eliminar", admin_game_version_path(game_version), class: "btn btn-link", method: :delete, data: { confirm: "¿Estás seguro? Esta acción es irreversible" }
