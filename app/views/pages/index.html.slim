@@ -4,7 +4,8 @@
       = t "ui.landing.message"
       .align_right Tokiro
       .post_division
-      a.post_descarga href="/SAMSA_v1.exe"
+      - if game
+        a.post_descarga href="#{game.url}"
       .post_logo_atixx
   .col-sm-6.col-xs-12
     .row.sponsors

@@ -8,6 +8,7 @@ class PagesController < ApplicationController
 
   expose :page
   expose(:sponsors) { SPONSORS }
+  expose(:game) { GameVersion.last }
 
   alias_method :commentable, :page
 

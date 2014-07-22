@@ -34,6 +34,7 @@ SamsaWebsite::Application.routes.draw do
     resources :media
     resources :header_characters
     resources :products
+    resources :game_versions
     resources :posts do
       collection do
         post :preview
