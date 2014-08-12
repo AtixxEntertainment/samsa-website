@@ -5,6 +5,7 @@ SamsaWebsite::Application.routes.draw do
 
   get "login", to: "sessions#index", as: :login
   get "logout", to: "sessions#destroy", as: :logout
+  post "game_download", to: "game_download#create"
 
   resources :products, only: :index
   resources :news, only: :index
