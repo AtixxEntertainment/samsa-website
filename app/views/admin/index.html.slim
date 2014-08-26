@@ -6,6 +6,8 @@ h1 Administración
   .col-xs-6
     h3 = pluralize Download.count, "descarga"
     - if last_download = Download.last
+      p = "#{Download.windows.count} descargas windows"
+      p = "#{Download.mac.count} descargas mac"
       p
         ' Última descarga hace
         = time_ago_in_words last_download.created_at

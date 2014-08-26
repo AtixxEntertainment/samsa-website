@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140812033638) do
+ActiveRecord::Schema.define(version: 20140826035400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,8 +45,11 @@ ActiveRecord::Schema.define(version: 20140812033638) do
   create_table "downloads", force: true do |t|
     t.integer  "user_id"
     t.datetime "created_at"
+    t.string   "platform"
+    t.string   "path"
   end
 
+  add_index "downloads", ["platform"], name: "index_downloads_on_platform", using: :btree
   add_index "downloads", ["user_id"], name: "index_downloads_on_user_id", using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -65,10 +68,11 @@ ActiveRecord::Schema.define(version: 20140812033638) do
   create_table "game_versions", force: true do |t|
     t.string   "tag"
     t.text     "changelog"
-    t.string   "url"
+    t.string   "windows_url"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "hidden",     default: false
+    t.boolean  "hidden",      default: false
+    t.string   "mac_url"
   end
 
   add_index "game_versions", ["hidden"], name: "index_game_versions_on_hidden", using: :btree

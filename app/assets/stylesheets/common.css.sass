@@ -26,12 +26,22 @@
   background-image: url("/images/post_division.png")
   height: 10px
   margin: 1em 0
+.post_descarga_wrapper
+  margin: 2em 0
 .post_descarga
-  @include bg-image
-  background-image: url("/images/post_descarga.png")
-  height: 165px
-  width: 175px
-  display: inline-block
+  display: block
+  text-align: left
+  font-size: 17px
+  margin: 1em 0
+  &.mac
+    margin-left: 4px
+  img
+    max-width: 30px
+    max-height: 30px
+    margin-right: 0.5em
+.download-title
+  text-align: left
+  color: rgb(189,21,12)
 .post_logo_atixx
   @include bg-image
   background-image: url("/images/logo_atixx.png")

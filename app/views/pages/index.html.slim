@@ -5,7 +5,14 @@
       .align_right Tokiro
       .post_division
       - if game
-        a.post_descarga href="#{game.url}"
+        h2.download-title Descarga:
+        .post_descarga_wrapper
+          a.post_descarga.windows href="#{game.windows_url}"
+            = image_tag "/images/microsoft_logo.png"
+            = "Samsa versión #{game.tag} (PC)"
+          a.post_descarga.mac href="#{game.mac_url}"
+            = image_tag "/images/apple_logo.jpg"
+            = "Samsa versión #{game.tag} (Mac)"
       .post_logo_atixx
   .col-sm-6.col-xs-12
     .row.sponsors
