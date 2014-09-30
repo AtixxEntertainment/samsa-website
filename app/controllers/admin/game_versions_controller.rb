@@ -26,7 +26,7 @@ module Admin
     end
 
     def set_active
-      @active_item = :game_versions
+      @active_item = :versiones
     end
   end
 end
