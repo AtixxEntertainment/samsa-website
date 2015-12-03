@@ -53,6 +53,7 @@ gem "github-markdown"
 gem "friendly_id", "~> 5.0.0"
 gem "sucker_punch" # backgrounding
 gem "premailer-rails" # style emails
+gem "nokogiri"
 gem "newrelic_rpm"
 gem "globalize" # AR models translations
 gem "simple_form"

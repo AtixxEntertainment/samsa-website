@@ -335,6 +335,7 @@ DEPENDENCIES
   meta_request
   mobile-fu
   newrelic_rpm
+  nokogiri
   omniauth-facebook
   omniauth-twitter
   pg
