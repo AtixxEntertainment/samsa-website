@@ -93,6 +93,11 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem "meta_request"
+  gem "capistrano"
+  gem "capistrano-rails"
+  gem "capistrano-passenger"
+  gem "capistrano-rbenv"
+  gem "capistrano-bundler"
 end
 
 group :test do
