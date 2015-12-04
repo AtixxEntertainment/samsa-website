@@ -3,7 +3,8 @@
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-server 'samsarpg.com', user: 'samsa', roles: %w{app db web}
+set :deployer, 'samsa'
+server 'samsarpg.com', user: fetch(:deployer), roles: %w{app db web}
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
@@ -31,7 +32,7 @@ server 'samsarpg.com', user: 'samsa', roles: %w{app db web}
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
-
+set :rbenv_custom_path, "/home/#{fetch(:deployer)}/.rbenv"
 
 # Custom SSH Options
 # ==================
