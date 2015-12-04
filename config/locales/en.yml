@@ -48,6 +48,7 @@ en:
       submitting: Commenting...
       cant_vote_self: You can't vote on your own comment
     landing:
+      download: Download
       message: "Click here to buy Samsa's commercial version at STEAM. Thank you for supporting this indie RPG game"
       scripts: You can find here the scripts we used
   activerecord:

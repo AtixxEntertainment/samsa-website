@@ -8,6 +8,7 @@ h1 Administración
     - if last_download = Download.last
       p = "#{Download.windows.count} descargas windows"
       p = "#{Download.mac.count} descargas mac"
+      p = "#{Download.steam.count} descargas steam"
       p
         ' Última descarga hace
         = time_ago_in_words last_download.created_at

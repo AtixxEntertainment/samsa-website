@@ -8,7 +8,7 @@ class PagesController < ApplicationController
 
   expose :page
   expose(:sponsors) { SPONSORS }
-  expose(:game) { GameVersion.visible.last }
+  expose(:game_url) { GameVersion::STEAM_URL }
 
   alias_method :commentable, :page
 

@@ -1,18 +1,20 @@
 .row
   .col-sm-6.col-xs-12
     .bg_mensaje_tokiro
-      = t "ui.landing.message"
+      h2.download-title
+        = "#{t('ui.landing.download')}:"
+      .post_descarga_wrapper
+        = link_to game_url,
+                  class: "post_descarga",
+                  target: "_blank",
+                  data: { platform: "steam" } do
+          p = t "ui.landing.message"
+          = image_tag "/images/steam-icon.png"
+
       .post_division
-      - if game
-        h2.download-title Descarga:
-        .post_descarga_wrapper
-          a.post_descarga.windows href="#{game.windows_url}"
-            = image_tag "/images/microsoft_logo.png"
-            = "Samsa versión #{game.tag} (PC)"
-          a.post_descarga.mac href="#{game.mac_url}"
-            = image_tag "/images/apple_logo.jpg"
-            = "Samsa versión #{game.tag} (Mac)"
+
       .post_logo_atixx
+
   .col-sm-6.col-xs-12
     .row.sponsors
       - sponsors.each do |sponsor, link|
