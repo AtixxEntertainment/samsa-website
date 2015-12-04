@@ -1,9 +1,10 @@
 trackDownload = (e) ->
   platform = $(e.currentTarget).data("platform")
+  path = e.currentTarget.href
   setTimeout ->
     $.post "/game_download", {
       platform: platform,
-      path: e.currentTarget.href
+      path: path
     }
   , 0
   true
