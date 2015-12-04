@@ -1,5 +1,5 @@
 trackDownload = (e) ->
-  platform = if $(e.target).hasClass("windows") then "windows" else "mac"
+  platform = $(e.currentTarget).data("platform")
   setTimeout ->
     $.post "/game_download", {
       platform: platform,
