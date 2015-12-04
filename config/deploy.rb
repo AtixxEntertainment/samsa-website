@@ -4,6 +4,10 @@ lock '3.4.0'
 set :application, 'samsa-website'
 set :repo_url, 'git@github.com:AtixxEntertainment/samsa-website.git'
 
+set :hipchat_token, "297aa5ed53adeb2638c16eeb1b3f25"
+set :hipchat_room_name, "2224889"
+set :hipchat_bot_name, "bre"
+
 # Default branch is :master
 set :branch, ENV['BRANCH'] || 'master'
 
@@ -34,7 +38,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-set :rbenv_ruby, '2.0.0'
+set :rbenv_ruby, '2.0.0-p647'
 
 namespace :deploy do
 

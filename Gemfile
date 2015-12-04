@@ -98,6 +98,7 @@ group :development do
   gem "capistrano-passenger"
   gem "capistrano-rbenv"
   gem "capistrano-bundler"
+  gem "capistrano-hipchat"
 end
 
 group :test do
