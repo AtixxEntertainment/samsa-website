@@ -48,7 +48,7 @@ en:
       submitting: Commenting...
       cant_vote_self: You can't vote on your own comment
     landing:
-      message: "This game is free thanks to independent creators and their sponsors, download it and don't forget to support the project by liking our partners so we can continue to do this for free. From fans to fans. Thanks"
+      message: "Click here to buy Samsa's commercial version at STEAM. Thank you for supporting this indie RPG game"
       scripts: You can find here the scripts we used
   activerecord:
     attributes:
