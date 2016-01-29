@@ -1,4 +1,4 @@
 - if defined?(comments)
   .post_comments
-    = render comments
+    = render comments if comments.present?
   .new-comment-form = render "comments/new"

@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   include Commentable
 
-  expose_decorated :post
+  expose_decorated(:post) {
+    Page.descarga
+  }
 
   def show
     self.post = Post.find params[:id]
