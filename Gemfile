@@ -37,12 +37,6 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
-# Use unicorn as the app server
-gem "unicorn"
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
@@ -102,6 +96,7 @@ group :deployment do
   gem "capistrano-rbenv"
   gem "capistrano-bundler"
   gem "capistrano-hipchat"
+  gem "slackistrano"
 end
 
 group :test do
