@@ -13,6 +13,7 @@ set :branch, ENV['BRANCH'] || 'master'
 
 set :deployer, 'macool'
 set :passenger_restart_with_touch, true
+set :slack_webhook, "https://hooks.slack.com/services/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"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/#{fetch(:deployer)}/samsa-website"

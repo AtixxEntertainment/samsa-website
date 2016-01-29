@@ -96,6 +96,7 @@ group :deployment do
   gem "capistrano-rbenv"
   gem "capistrano-bundler"
   gem "capistrano-hipchat"
+  gem "slackistrano"
 end
 
 group :test do
