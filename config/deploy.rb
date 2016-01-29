@@ -11,8 +11,11 @@ set :hipchat_bot_name, "bre"
 # Default branch is :master
 set :branch, ENV['BRANCH'] || 'master'
 
+set :deployer, 'macool'
+set :passenger_restart_with_touch, true
+
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/samsa/samsa-website'
+set :deploy_to, "/home/#{fetch(:deployer)}/samsa-website"
 
 # Default value for :scm is :git
 # set :scm, :git
