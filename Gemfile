@@ -40,7 +40,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "dotenv-rails"
+gem "dotenv-rails", require: "dotenv/rails-now"
 gem "slim" # templates
 gem "kaminari"
 gem "github-markdown"
