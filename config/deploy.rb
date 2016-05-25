@@ -4,10 +4,6 @@ lock '3.4.0'
 set :application, 'samsa-website'
 set :repo_url, 'git@github.com:AtixxEntertainment/samsa-website.git'
 
-set :hipchat_token, "297aa5ed53adeb2638c16eeb1b3f25"
-set :hipchat_room_name, "2224889"
-set :hipchat_bot_name, "bre"
-
 # Default branch is :master
 set :branch, ENV['BRANCH'] || 'master'
 

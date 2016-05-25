@@ -95,7 +95,6 @@ group :deployment do
   gem "capistrano-passenger"
   gem "capistrano-rbenv"
   gem "capistrano-bundler"
-  gem "capistrano-hipchat"
   gem "slackistrano"
 end
 
