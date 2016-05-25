@@ -95,7 +95,7 @@ group :deployment do
   gem "capistrano-passenger"
   gem "capistrano-rbenv"
   gem "capistrano-bundler"
-  gem "slackistrano"
+  gem "slackistrano", github: "phallstrom/slackistrano"
 end
 
 group :test do

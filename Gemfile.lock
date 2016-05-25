@@ -13,6 +13,14 @@ GIT
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
 
+GIT
+  remote: git://github.com/phallstrom/slackistrano.git
+  revision: 42a25a2c6266bf911a16791c2e29a651d2d2fc1f
+  specs:
+    slackistrano (3.0.1)
+      capistrano (>= 3.5.0)
+      json
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -44,6 +52,8 @@ GEM
     airbrake (3.1.16)
       builder
       multi_json
+    airbrussh (1.0.2)
+      sshkit (>= 1.6.1, != 1.7.0)
     arel (4.0.2)
     atomic (1.1.14)
     better_errors (1.1.0)
@@ -56,13 +66,16 @@ GEM
       activesupport
       uniform_notifier (>= 1.4.0)
     callsite (0.0.11)
-    capistrano (3.4.0)
+    capistrano (3.5.0)
+      airbrussh (>= 1.0.0)
+      capistrano-harrow
       i18n
       rake (>= 10.0.0)
-      sshkit (~> 1.3)
+      sshkit (>= 1.9.0)
     capistrano-bundler (1.1.4)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
+    capistrano-harrow (0.5.1)
     capistrano-passenger (0.1.1)
       capistrano (~> 3.0)
     capistrano-rails (1.1.5)
@@ -143,14 +156,14 @@ GEM
     hike (1.2.3)
     htmlentities (4.3.1)
     httpauth (0.2.0)
-    i18n (0.6.9)
+    i18n (0.7.0)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    json (1.8.1)
+    json (1.8.3)
     jwt (0.1.10)
       multi_json (>= 1.5)
     kaminari (0.15.1)
@@ -181,7 +194,7 @@ GEM
     multipart-post (1.2.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (3.0.1)
+    net-ssh (3.1.1)
     newrelic_rpm (3.7.3.204)
     nio4r (1.1.1)
     nokogiri (1.6.7)
@@ -246,7 +259,7 @@ GEM
       activesupport (= 4.0.2)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.1.1)
+    rake (11.1.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.3)
       ffi (>= 0.5.0)
@@ -281,9 +294,6 @@ GEM
     simple_form (3.0.1)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
-    slackistrano (0.0.11)
-      capistrano
-      json
     slim (2.0.2)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
@@ -297,7 +307,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sshkit (1.8.0)
+    sshkit (1.10.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     sucker_punch (1.0.3)
@@ -371,7 +381,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   simple_form
-  slackistrano
+  slackistrano!
   slim
   sucker_punch
   terminal-notifier-guard
